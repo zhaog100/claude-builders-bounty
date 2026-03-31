@@ -42,7 +42,7 @@
 
 **修复前**:
 ```
-AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms
+AIzaSyB1234567890abcdefghijklmnop
 ```
 
 **修复后**:

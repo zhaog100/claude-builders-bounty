@@ -4,7 +4,7 @@
 # bounty_scan.sh - 多平台bounty扫描+预检+评分
 # 用法: bash bounty_scan.sh
 
-TOKEN="${GITHUB_TOKEN:-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}"
+TOKEN="${GITHUB_TOKEN:-${GITHUB_TOKEN}}"
 
 echo "=== GitHub Bounty Scan ==="
 echo "Time: $(date)"
