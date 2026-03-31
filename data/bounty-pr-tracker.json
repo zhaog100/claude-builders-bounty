@@ -17,6 +17,20 @@
       "note": "✅ PR 已提交，等待审核"
     },
     {
+      "id": "PR-20260331-002",
+      "repo": "illbnm/homelab-stack",
+      "issue": 7,
+      "pr": "pending",
+      "url": "待推送",
+      "title": "feat(home-automation): 实现完整的智能家居自动化栈",
+      "amount": 130,
+      "currency": "USDT",
+      "status": "local_ready",
+      "submitted": "2026-03-31",
+      "payment_platform": "opire",
+      "note": "⏳ 代码已提交，等待网络恢复后推送 PR"
+    },
+    {
       "id": "PR-20260317-001",
       "repo": "Scottcjn/rustchain-bounties",
       "issue": 1589,
