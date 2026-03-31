@@ -1,197 +1,133 @@
-# 🧠 知识库索引
+# 知识库索引
 
-**最后更新**: 2026-03-31 07:27 PDT
-**版本**: 2.1
-
----
-
-## 📂 分类目录
-
-### 1️⃣ Bounty 知识 (bounty/)
-
-**核心文档**:
-- [references/](bounty/references/) - 参考文档
-  - [github-bounty-hunter-implementation.md](bounty/references/github-bounty-hunter-implementation.md) - 实现指南
-- [templates/](bounty/templates/) - 模板文件
-  - [SECURITY.md.template](bounty/templates/SECURITY.md.template) - 安全模板
-
-**README**:
-- [README.md](bounty/README.md) - Bounty 知识库说明
+_自动生成 - $(date '+%Y-%m-%d %H:%M:%S')_
 
 ---
 
-### 2️⃣ API 文档 (api/)
+## 📁 目录结构
 
-**子目录**:
-- [aliyun-bailian/](api/aliyun-bailian/) - 阿里云百炼 API
-  - 使用文档
-  - 配置说明
-
----
-
-### 3️⃣ 智能家居 (smart-home/) ⭐ 新增
-
-**核心文档**:
-- [home-assistant-network-mode.md](smart-home/home-assistant-network-mode.md) - Home Assistant 网络模式
-  - 为什么必须使用 host 网络
-  - mDNS/UPnP 设备发现
-  - Bridge 模式限制
-  - 配置示例
-
-- [mosquitto-security-configuration.md](smart-home/mosquitto-security-configuration.md) - Mosquitto 安全配置
-  - 禁用匿名访问
-  - 密码认证
-  - 访问控制 (ACL)
-  - TLS/SSL 加密
-  - Docker 配置
-
----
-
-### 4️⃣ AI 技能 (ai-skills/)
-
-**技能列表**:
-- 技能文档和实现
-
----
-
-### 4️⃣ AI 系统设计 (ai-system-design/)
-
-**设计文档**:
-- 系统架构
-- 技术选型
-
----
-
-### 5️⃣ 文章 (articles/)
-
-**内容**:
-- 技术文章
-- 最佳实践
-
----
-
-### 6️⃣ 档案 (archives/)
-
-**归档内容**:
-- 旧文档
-- 历史版本
-
----
-
-### 7️⃣ 内容创作 (content-creation/)
-
-**工具和方法**:
-- 写作指南
-- 内容模板
-
----
-
-### 8️⃣ 财务 AI 测试 (financial-ai-testing/)
-
-**测试文档**:
-- 合规性测试
-- 风险评估
-
----
-
-### 9️⃣ 多智能体协作 (multi-agent-collaboration/)
-
-**协作模式**:
-- 通信协议
-- 任务分配
-
----
-
-### 🔟 外包管理 (outsourcing-management/)
-
-**管理文档**:
-- 外包流程
-- 质量控制
-
----
-
-### 1️⃣0️⃣ 软件测试 (software-testing/)
-
-**测试项目**:
-- [testing-projects/](software-testing/testing-projects/) - 测试项目
-  - [PROJECT-INDEX.md](software-testing/testing-projects/PROJECT-INDEX.md) - 项目索引
-
----
-
-## 🎯 快速访问
-
-### Bounty 相关
-```bash
-# 查看实现指南
-cat knowledge/bounty/references/github-bounty-hunter-implementation.md
-
-# 查看模板
-ls knowledge/bounty/templates/
-```
-
-### API 文档
-```bash
-# 查看百炼 API
-cat knowledge/api/aliyun-bailian/*.md
-```
-
----
-
-## 📊 统计信息
-
-### 目录统计
-- **总目录**: 13 个
-- **文档数**: 50+ 个
-- **总大小**: ~2MB
-
-### 热门主题
-1. **Bounty** - 赏金任务知识
-2. **API** - API 文档
-3. **AI 技能** - AI 相关技能
-
----
-
-## 🔍 搜索指南
-
-### 按主题搜索
-```bash
-# 搜索 Bounty 相关
-find knowledge/ -name "*bounty*" -type f
-
-# 搜索 API 相关
-find knowledge/ -name "*api*" -type f
-
-# 搜索模板
-find knowledge/ -name "*.template" -type f
-```
-
-### 按关键词搜索
-```bash
-# 搜索关键词
-grep -r "关键词" knowledge/
-```
-
----
-
-## 🔧 维护
-
-### 每周
-- 检查链接有效性
-- 更新过时内容
-
-### 每月
-- 清理重复内容
-- 归档旧文档
-
----
-
-## 📚 相关索引
-
-- [主索引](../MASTER-INDEX.md) - 返回主索引
-- [记忆索引](../memory/INDEX.md) - 记忆系统
-- [数据索引](../data/INDEX.md) - 数据目录
-
----
-
-_创建时间: 2026-03-29_
-_最后更新: 2026-03-31 07:19 PDT_
+- [KNOWLEDGE-INDEX.md](KNOWLEDGE-INDEX.md) (8.0K)
+- [content-creation/content-strategy/内容策略指南.md](content-creation/content-strategy/内容策略指南.md) (8.0K)
+- [content-creation/wechat-public/公众号运营指南.md](content-creation/wechat-public/公众号运营指南.md) (8.0K)
+- [content-creation/video-creation/视频创作指南.md](content-creation/video-creation/视频创作指南.md) (8.0K)
+- [multi-agent-collaboration/MULTI_AGENT_BEST_PRACTICES.md](multi-agent-collaboration/MULTI_AGENT_BEST_PRACTICES.md) (4.0K)
+- [tools/plantuml-guide.md](tools/plantuml-guide.md) ( 12K)
+- [tools/openclaw-sessions-api.md](tools/openclaw-sessions-api.md) (8.0K)
+- [software-testing/testing-projects/traveler-platform/test-cases/统计看板测试用例.md](software-testing/testing-projects/traveler-platform/test-cases/统计看板测试用例.md) ( 12K)
+- [software-testing/testing-projects/traveler-platform/test-plans/测试准备.md](software-testing/testing-projects/traveler-platform/test-plans/测试准备.md) (8.0K)
+- [software-testing/testing-projects/traveler-platform/README.md](software-testing/testing-projects/traveler-platform/README.md) ( 12K)
+- [software-testing/testing-projects/traveler-platform/test-reports/第一轮测试报告-20260303.md](software-testing/testing-projects/traveler-platform/test-reports/第一轮测试报告-20260303.md) (8.0K)
+- [software-testing/testing-projects/使用指南.md](software-testing/testing-projects/使用指南.md) (8.0K)
+- [software-testing/testing-projects/README.md](software-testing/testing-projects/README.md) (8.0K)
+- [software-testing/testing-projects/PROJECT-INDEX.md](software-testing/testing-projects/PROJECT-INDEX.md) (4.0K)
+- [software-testing/testing-projects/PROJECT-TEMPLATE.md](software-testing/testing-projects/PROJECT-TEMPLATE.md) (8.0K)
+- [software-testing/测试用例设计与三端测试方案.md](software-testing/测试用例设计与三端测试方案.md) ( 20K)
+- [software-testing/test-management/测试管理指南.md](software-testing/test-management/测试管理指南.md) (4.0K)
+- [software-testing/mobile-testing/移动应用测试完整指南.md](software-testing/mobile-testing/移动应用测试完整指南.md) ( 20K)
+- [software-testing/mobile-testing/测试能力扩展计划-移动端与桌面端.md](software-testing/mobile-testing/测试能力扩展计划-移动端与桌面端.md) ( 16K)
+- [software-testing/test-tools/搜索测试报告.md](software-testing/test-tools/搜索测试报告.md) (8.0K)
+- [software-testing/test-tools/测试工具指南.md](software-testing/test-tools/测试工具指南.md) (8.0K)
+- [software-testing/test-tools/test-document.md](software-testing/test-tools/test-document.md) (4.0K)
+- [software-testing/test-tools/测试进阶工具链.md](software-testing/test-tools/测试进阶工具链.md) ( 28K)
+- [software-testing/test-automation/自动化测试指南.md](software-testing/test-automation/自动化测试指南.md) (4.0K)
+- [software-testing/知识库扩展总结-20260303.md](software-testing/知识库扩展总结-20260303.md) ( 12K)
+- [software-testing/desktop-testing/桌面应用测试完整指南.md](software-testing/desktop-testing/桌面应用测试完整指南.md) ( 20K)
+- [outsourcing-management/位置分析-测试领域vs独立目录.md](outsourcing-management/位置分析-测试领域vs独立目录.md) ( 12K)
+- [outsourcing-management/PLATFORM-GUIDE.md](outsourcing-management/PLATFORM-GUIDE.md) ( 12K)
+- [outsourcing-management/SUMMARY.md](outsourcing-management/SUMMARY.md) (8.0K)
+- [outsourcing-management/最终结构说明.md](outsourcing-management/最终结构说明.md) (8.0K)
+- [outsourcing-management/猪八戒资料完善指南.md](outsourcing-management/猪八戒资料完善指南.md) ( 12K)
+- [outsourcing-management/BIDDING-TEMPLATE.md](outsourcing-management/BIDDING-TEMPLATE.md) (8.0K)
+- [outsourcing-management/README.md](outsourcing-management/README.md) (8.0K)
+- [outsourcing-management/PROJECT-EVALUATION.md](outsourcing-management/PROJECT-EVALUATION.md) (8.0K)
+- [ai-system-design/2026-03-05-jd-system-upgrade.md](ai-system-design/2026-03-05-jd-system-upgrade.md) (4.0K)
+- [ai-system-design/openclaw-extensions-guide.md](ai-system-design/openclaw-extensions-guide.md) (8.0K)
+- [ai-system-design/wool-gathering-optimization-guide.md](ai-system-design/wool-gathering-optimization-guide.md) ( 12K)
+- [ai-system-design/PlantUML图表创建完整指南.md](ai-system-design/PlantUML图表创建完整指南.md) (8.0K)
+- [ai-system-design/openclaw-architecture.md](ai-system-design/openclaw-architecture.md) (8.0K)
+- [ai-system-design/2026-03-04-学习总结.md](ai-system-design/2026-03-04-学习总结.md) (8.0K)
+- [ai-system-design/context-monitoring-best-practices.md](ai-system-design/context-monitoring-best-practices.md) ( 12K)
+- [ai-system-design/OpenClaw-Skills使用指南.md](ai-system-design/OpenClaw-Skills使用指南.md) ( 12K)
+- [ai-system-design/openclaw-skills-guide.md](ai-system-design/openclaw-skills-guide.md) (8.0K)
+- [ai-system-design/AI自动化测试实战指南.md](ai-system-design/AI自动化测试实战指南.md) ( 12K)
+- [ai-system-design/OpenClaw-Playwright网页爬取.md](ai-system-design/OpenClaw-Playwright网页爬取.md) (4.0K)
+- [ai-system-design/openclaw-playwright-guide.md](ai-system-design/openclaw-playwright-guide.md) (8.0K)
+- [ai-system-design/OpenClaw-Skills使用指南-完整版.md](ai-system-design/OpenClaw-Skills使用指南-完整版.md) ( 12K)
+- [ai-system-design/aihubmix-free-models-guide.md](ai-system-design/aihubmix-free-models-guide.md) (4.0K)
+- [bounty/references/tscircuit-ecosystem-lessons.md](bounty/references/tscircuit-ecosystem-lessons.md) (4.0K)
+- [bounty/references/github-bounty-hunter-implementation.md](bounty/references/github-bounty-hunter-implementation.md) (8.0K)
+- [bounty/strategies/filters.md](bounty/strategies/filters.md) (4.0K)
+- [bounty/strategies/auto-workflow.md](bounty/strategies/auto-workflow.md) (4.0K)
+- [bounty/strategies/github-search.md](bounty/strategies/github-search.md) (4.0K)
+- [bounty/strategies/scoring.md](bounty/strategies/scoring.md) (8.0K)
+- [bounty/security-templates/minimal.md](bounty/security-templates/minimal.md) (4.0K)
+- [bounty/security-templates/enterprise.md](bounty/security-templates/enterprise.md) (8.0K)
+- [bounty/security-templates/standard.md](bounty/security-templates/standard.md) (4.0K)
+- [bounty/README.md](bounty/README.md) (4.0K)
+- [bounty/platform-specific/rustchain-payment-flow.md](bounty/platform-specific/rustchain-payment-flow.md) (4.0K)
+- [bounty/history/completed.md](bounty/history/completed.md) (4.0K)
+- [bounty/history/lessons.md](bounty/history/lessons.md) (4.0K)
+- [trade/README.md](trade/README.md) (4.0K)
+- [trade/export-process.md](trade/export-process.md) (4.0K)
+- [trade/email-templates.md](trade/email-templates.md) (8.0K)
+- [trade/incoterms-2020.md](trade/incoterms-2020.md) (4.0K)
+- [trade/xiaohongshu-strategy.md](trade/xiaohongshu-strategy.md) (8.0K)
+- [KNOWLEDGE_FRAMEWORK.md](KNOWLEDGE_FRAMEWORK.md) (4.0K)
+- [SEARCH-GUIDE.md](SEARCH-GUIDE.md) (4.0K)
+- [project-management/project-planning/项目规划指南.md](project-management/project-planning/项目规划指南.md) (4.0K)
+- [project-management/agile-methodology/敏捷项目管理方法论.md](project-management/agile-methodology/敏捷项目管理方法论.md) (4.0K)
+- [project-management/agile-methodology/敏捷项目管理实战指南.md](project-management/agile-methodology/敏捷项目管理实战指南.md) ( 16K)
+- [project-management/pmp-certification/PMP认证指南.md](project-management/pmp-certification/PMP认证指南.md) (4.0K)
+- [project-management/pmp-certification/PMP认证完整指南.md](project-management/pmp-certification/PMP认证完整指南.md) ( 12K)
+- [project-management/项目管理与测试结合实践指南.md](project-management/项目管理与测试结合实践指南.md) ( 16K)
+- [articles/2026-03-22-shubham-file-system-memory.md](articles/2026-03-22-shubham-file-system-memory.md) (4.0K)
+- [articles/general/OpenClaw 全套核心提示词中文完整版_1773136787731.md](articles/general/OpenClaw 全套核心提示词中文完整版_1773136787731.md) ( 52K)
+- [articles/general/2026-03-04-学习总结.md](articles/general/2026-03-04-学习总结.md) ( 12K)
+- [articles/wechat/wechat_article_20260310_161403.md](articles/wechat/wechat_article_20260310_161403.md) ( 12K)
+- [articles/wechat/wechat-article-2026-03-10.md](articles/wechat/wechat-article-2026-03-10.md) (4.0K)
+- [articles/wechat/wechat_腾讯悄咪咪做了个_QClaw_用微信就能跟龙虾对话了_.md](articles/wechat/wechat_腾讯悄咪咪做了个_QClaw_用微信就能跟龙虾对话了_.md) ( 12K)
+- [articles/wechat/wechat_OpenClaw极速使用_技能与插件_20260310_170918.md](articles/wechat/wechat_OpenClaw极速使用_技能与插件_20260310_170918.md) (8.0K)
+- [articles/wechat/wechat_article_没理由不用 Google Antigravity 了，不仅额度用不完，现在还支持 Skill 了！_2026-03-10T08-40-53-693Z.md](articles/wechat/wechat_article_没理由不用 Google Antigravity 了，不仅额度用不完，现在还支持 Skill 了！_2026-03-10T08-40-53-693Z.md) (4.0K)
+- [articles/wechat/wechat-article-1773134120130.md](articles/wechat/wechat-article-1773134120130.md) ( 12K)
+- [articles/wechat/wechat-article-别买_API_了_ChatGPT_接入_OpenClaw_GPT_5_4_养_龙虾__保姆级教程_-1773147971392.md](articles/wechat/wechat-article-别买_API_了_ChatGPT_接入_OpenClaw_GPT_5_4_养_龙虾__保姆级教程_-1773147971392.md) (8.0K)
+- [archives/2026-03-12/smart-model-v2-development.md](archives/2026-03-12/smart-model-v2-development.md) (4.0K)
+- [archives/2026-03-12/commercial-license-system.md](archives/2026-03-12/commercial-license-system.md) (8.0K)
+- [archives/2026-03-12/dual-mili-collaboration-system.md](archives/2026-03-12/dual-mili-collaboration-system.md) (8.0K)
+- [archives/2026-03-13/xiaomili_daily_summary.md](archives/2026-03-13/xiaomili_daily_summary.md) (8.0K)
+- [archives/2026-03-14/2026-03-14-lessons-learned.md](archives/2026-03-14/2026-03-14-lessons-learned.md) (8.0K)
+- [archives/2026-03/2026-03-03-学习回顾.md](archives/2026-03/2026-03-03-学习回顾.md) (8.0K)
+- [archives/2026-03/daily-summary-20260302.md](archives/2026-03/daily-summary-20260302.md) ( 12K)
+- [archives/2026-03/daily-summary-20260303.md](archives/2026-03/daily-summary-20260303.md) ( 12K)
+- [archives/2026-03/system-optimization-20260303.md](archives/2026-03/system-optimization-20260303.md) (8.0K)
+- [archives/2026-03/review-checklist-20260303.md](archives/2026-03/review-checklist-20260303.md) (8.0K)
+- [archives/2026-03/test-document.md](archives/2026-03/test-document.md) (4.0K)
+- [archives/2026-03/2026-03-03-最终工作总结.md](archives/2026-03/2026-03-03-最终工作总结.md) ( 12K)
+- [archives/2026-03/OpenClaw完整配置方案.md](archives/2026-03/OpenClaw完整配置方案.md) ( 12K)
+- [archives/2026-03/review-checklist-20260302.md](archives/2026-03/review-checklist-20260302.md) (4.0K)
+- [archives/2026-03/2026-03-03-学习总结与知识回顾.md](archives/2026-03/2026-03-03-学习总结与知识回顾.md) ( 16K)
+- [financial-ai-testing/compliance/README.md](financial-ai-testing/compliance/README.md) (8.0K)
+- [README.md](README.md) (4.0K)
+- [INDEX.md](INDEX.md) ( 12K)
+- [local-speech-recognition-research.md](local-speech-recognition-research.md) (8.0K)
+- [旅行客平台/测试报告/问题清单模板.md](旅行客平台/测试报告/问题清单模板.md) (8.0K)
+- [旅行客平台/README.md](旅行客平台/README.md) (4.0K)
+- [旅行客平台/需求文档/需求说明.md](旅行客平台/需求文档/需求说明.md) ( 12K)
+- [旅行客平台/系统功能结构.md](旅行客平台/系统功能结构.md) ( 12K)
+- [旅行客平台/测试用例/测试用例模板.md](旅行客平台/测试用例/测试用例模板.md) (8.0K)
+- [旅行客平台/测试用例/管理端测试用例-完整版.md](旅行客平台/测试用例/管理端测试用例-完整版.md) ( 24K)
+- [旅行客平台/测试用例/管理端-可访问部分测试用例.md](旅行客平台/测试用例/管理端-可访问部分测试用例.md) ( 20K)
+- [旅行客平台/测试用例/旅行客平台-统计看板测试用例.md](旅行客平台/测试用例/旅行客平台-统计看板测试用例.md) ( 12K)
+- [旅行客平台/测试环境说明.md](旅行客平台/测试环境说明.md) (8.0K)
+- [旅行客平台/学习笔记/旅行客平台测试准备.md](旅行客平台/学习笔记/旅行客平台测试准备.md) (8.0K)
+- [旅行客平台/学习笔记/2026-03-04-学习总结.md](旅行客平台/学习笔记/2026-03-04-学习总结.md) (8.0K)
+- [旅行客平台/学习笔记/2026-03-04-工作总结.md](旅行客平台/学习笔记/2026-03-04-工作总结.md) (8.0K)
+- [carbon-sink-system-architecture.md](carbon-sink-system-architecture.md) ( 12K)
+- [api/bailian-api-configuration.md](api/bailian-api-configuration.md) (4.0K)
+- [语音识别系统对比.md](语音识别系统对比.md) (4.0K)
+- [system-optimization/macos-performance-tuning.md](system-optimization/macos-performance-tuning.md) (8.0K)
+- [外贸-SOHO-学习指南.md](外贸-SOHO-学习指南.md) (8.0K)
+- [OPTIMIZE-PLAN.md](OPTIMIZE-PLAN.md) (4.0K)
+- [smart-home/home-assistant-network-mode.md](smart-home/home-assistant-network-mode.md) (8.0K)
+- [smart-home/mosquitto-security-configuration.md](smart-home/mosquitto-security-configuration.md) (8.0K)
+- [ai-skills/smart-model-switch-v1.1.0.md](ai-skills/smart-model-switch-v1.1.0.md) (8.0K)
+- [ai-skills/quote-reader-v1.0.0.md](ai-skills/quote-reader-v1.0.0.md) (8.0K)
