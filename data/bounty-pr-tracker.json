@@ -20,18 +20,15 @@
       "id": "PR-20260331-002",
       "repo": "illbnm/homelab-stack",
       "issue": 7,
-      "pr": "pending",
-      "url": "待推送（网络问题）",
+      "pr": 401,
+      "url": "https://github.com/illbnm/homelab-stack/pull/401",
       "title": "feat(home-automation): 实现完整的智能家居自动化栈",
       "amount": 130,
       "currency": "USDT",
-      "status": "ready_to_push",
+      "status": "open",
       "submitted": "2026-03-31",
       "payment_platform": "opire",
-      "local_path": "/tmp/homelab-stack",
-      "commit_hash": "275e175",
-      "files_count": 12,
-      "note": "✅ 代码已完成并提交到本地 Git，等待网络恢复后推送"
+      "note": "✅ PR #401 已提交，包含完整的智能家居自动化栈（Home Assistant + Node-RED + Mosquitto + Zigbee2MQTT + ESPHome）"
     },
     {
       "id": "PR-20260317-001",
