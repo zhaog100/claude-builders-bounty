@@ -1,7 +1,7 @@
 # 🧠 知识库索引
 
-**最后更新**: 2026-03-31 07:19 PDT
-**版本**: 2.0
+**最后更新**: 2026-03-31 07:27 PDT
+**版本**: 2.1
 
 ---
 
@@ -29,7 +29,25 @@
 
 ---
 
-### 3️⃣ AI 技能 (ai-skills/)
+### 3️⃣ 智能家居 (smart-home/) ⭐ 新增
+
+**核心文档**:
+- [home-assistant-network-mode.md](smart-home/home-assistant-network-mode.md) - Home Assistant 网络模式
+  - 为什么必须使用 host 网络
+  - mDNS/UPnP 设备发现
+  - Bridge 模式限制
+  - 配置示例
+
+- [mosquitto-security-configuration.md](smart-home/mosquitto-security-configuration.md) - Mosquitto 安全配置
+  - 禁用匿名访问
+  - 密码认证
+  - 访问控制 (ACL)
+  - TLS/SSL 加密
+  - Docker 配置
+
+---
+
+### 4️⃣ AI 技能 (ai-skills/)
 
 **技能列表**:
 - 技能文档和实现
