@@ -266,7 +266,7 @@ main() {
             echo "示例:"
             echo "  $0 scan ."
             echo "  $0 file .env"
-            echo "  $0 mask api AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms"
+            echo "  $0 mask api AIzaSyB1234567890abcdefghijklmnop"
             echo "  $0 mask email zhaog100@gmail.com"
             echo "  $0 check"
             ;;

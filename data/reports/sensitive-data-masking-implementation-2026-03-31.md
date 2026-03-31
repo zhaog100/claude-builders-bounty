@@ -44,7 +44,7 @@
 
 | 功能 | 输入 | 输出 | 状态 |
 |------|------|------|------|
-| **API Key 脱敏** | `AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms` | `AIza***...****z6ms` | ✅ |
+| **API Key 脱敏** | `AIza***...****z6ms` | `AIza***...****z6ms` | ✅ |
 | **邮箱脱敏** | `zhaog100@gmail.com` | `z***@gmail.com` | ✅ |
 | **密码脱敏** | `MyAppPassword123!` | `****123!` | ✅ |
 | **环境检查** | - | `.env 已被忽略` | ✅ |
@@ -109,7 +109,7 @@
 
 ```bash
 # API Key
-./scripts/sensitive-data-mask.sh mask api "AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms"
+./scripts/sensitive-data-mask.sh mask api "AIza***...****z6ms"
 # 输出: AIza***...****z6ms
 
 # 邮箱

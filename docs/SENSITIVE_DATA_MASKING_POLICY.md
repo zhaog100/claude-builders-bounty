@@ -179,7 +179,7 @@ echo "✓ API 连接成功（使用 AIza...z6ms）"
 
 ```bash
 # 1. 显示完整密钥
-echo "API Key: AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms"
+echo "API Key: AIzaSyB1234567890abcdefghijklmnop"
 
 # 2. 显示完整邮箱
 echo "Email: zhaog100@gmail.com"
