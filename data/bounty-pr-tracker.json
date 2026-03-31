@@ -3,6 +3,20 @@
   "updated": "2026-03-31T02:25:00-07:00",
   "prs": [
     {
+      "id": "PR-20260331-001",
+      "repo": "illbnm/homelab-stack",
+      "issue": 12,
+      "pr": 398,
+      "url": "https://github.com/illbnm/homelab-stack/pull/398",
+      "title": "feat(backup): 实现 3-2-1 备份策略和灾难恢复文档",
+      "amount": 150,
+      "currency": "USDT",
+      "status": "open",
+      "submitted": "2026-03-31",
+      "payment_platform": "opire",
+      "note": "✅ PR 已提交，等待审核"
+    },
+    {
       "id": "PR-20260317-001",
       "repo": "Scottcjn/rustchain-bounties",
       "issue": 1589,

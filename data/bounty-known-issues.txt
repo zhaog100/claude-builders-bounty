@@ -56,4 +56,4 @@ zio/zio#9356
 zio/zio#9877
 zio/zio#9878
 zio/zio-blocks#519
-zio/zio-http#3472
+zio/zio-http#3472illbnm/homelab-stack#12
