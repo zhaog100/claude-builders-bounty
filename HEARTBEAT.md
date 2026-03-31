@@ -4,6 +4,26 @@ _利用 OpenClaw 的 heartbeat 机制实现每日回顾_
 
 ---
 
+## 🚨 紧急提醒（2026-04-01）
+
+**必须在明日上午执行**：
+
+- [ ] **撤销 Gemini API Key**
+  - 访问: https://makersuite.google.com/app/apikey
+  - 删除旧 Key: `AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms`
+  - 生成新 Key
+  - 更新 `.env` 文件
+
+- [ ] **撤销 GitHub Token**
+  - 访问: https://github.com/settings/tokens
+  - 删除旧 Token: `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`
+  - 生成新 Token
+  - 更新 `.env` 文件
+
+**详见**: `data/reports/api-keys-to-rotate.md`
+
+---
+
 ## 📋 检查任务
 
 ### 每次心跳执行
