@@ -1,169 +1,217 @@
-# 🦎 Git 仓库索引
+# 🔧 Git 库索引
 
-_最后更新：2026-03-25 16:15_
-
----
-
-## 📦 仓库配置
-
-### 双仓库结构
-
-```
-工作区：/home/zhaog/.openclaw/workspace/
-├── origin      → git@github.com:zhaog100/openclaw-skills.git
-└── xiaomila    → git@github.com:zhaog100/xiaomila-skills.git
-```
-
-| 远程仓库 | 用途 | 推送内容 |
-|----------|------|----------|
-| **origin** | 公共技能库 | 公共技能、核心框架 |
-| **xiaomila** | 个人技能库 | 个人技能、小米粒专属 |
+**最后更新**: 2026-03-31 07:19 PDT
+**版本**: 2.0
 
 ---
 
-## 🎯 推送规则
+## 📊 Git 状态
 
-### 核心原则
+### 当前状态
+- **分支**: main
+- **未提交**: 0
+- **远程**: origin (github.com/zhaog100/openclaw-workspace)
+
+---
+
+## 📝 最近提交
+
+### 本周提交 (03-31 至 03-24)
+
+| 日期 | 提交 | 说明 |
+|------|------|------|
+| **03-31** | efbe37dd | backup: 结构化整理前备份 |
+| **03-31** | 4c9b647c | 📝 更新 Bounty PR 跟踪和工作日志 |
+| **03-31** | 275e175 | feat: 实现完整的智能家居自动化栈 |
+| **03-30** | - | 多个 Bounty 任务提交 |
+| **03-29** | - | 系统优化和知识库更新 |
+
+---
+
+## 📂 .gitignore 配置
+
+### 已忽略文件
 ```
-辣推辣，公推公 ✅（注意：远程名已改为 xiaomili）
-```
+# 环境变量
+.env
 
-### 判断标准
+# 临时文件
+*.tmp
+*.bak
+*~
 
-| 内容类型 | 推送目标 | 示例 |
-|----------|----------|------|
-| **公共技能** | origin | github-bounty-hunter, smart-model-switch |
-| **个人技能** | xiaomila | 个人工具、测试技能 |
-| **核心配置** | origin | AGENTS.md, MEMORY.md, SOUL.md |
-| **个人笔记** | xiaomila | 个人学习记录 |
+# 日志文件
+*.log
 
-### 决策流程
-```
-1. 是否涉及核心框架？
-   ├─ 是 → origin
-   └─ 否 → 继续判断
+# 编辑器
+.vscode/
+.idea/
 
-2. 是否可复用/有通用价值？
-   ├─ 是 → origin
-   └─ 否 → xiaomila
+# macOS
+.DS_Store
 
-3. 是否个人专属？
-   ├─ 是 → xiaomila
-   └─ 否 → origin
+# 敏感数据
+.secrets/
+*.key
+*.pem
 ```
 
 ---
 
-## 📊 当前状态
+## 🔍 Git 命令参考
 
-### Git 状态
+### 日常操作
 ```bash
-$ git status
-位于分支 master
-（详见 git status）
-```
-
-### 未提交变更（需要处理）
-| 文件 | 类型 | 建议推送 |
-|------|------|----------|
-| AGENTS.md | 核心规范 | origin |
-| HEARTBEAT.md | 核心规范 | origin |
-| IDENTITY.md | 核心身份 | origin |
-| MEMORY.md | 长期记忆 | origin |
-| TOOLS.md | 工作备忘 | origin |
-| USER.md | 用户档案 | origin |
-| Stellar-Guilds | 子模组 | 单独判断 |
-| data/bounty-known-issues.txt | 数据 | origin |
-
----
-
-## 🔧 常用命令
-
-### 查看状态
-```bash
+# 查看状态
 git status
-git remote -v
+
+# 查看历史
+git log --oneline --graph -20
+
+# 查看差异
+git diff
+
+# 提交更改
+git add -A
+git commit -m "type: description"
+
+# 推送
+git push
+
+# 拉取
+git pull
 ```
 
-### 推送公共内容
+### 分支管理
 ```bash
-git add <文件>
-git commit -m "feat|fix|docs: 描述"
-git push origin master
+# 创建分支
+git checkout -b feature/name
+
+# 切换分支
+git checkout main
+
+# 合并分支
+git merge feature/name
+
+# 删除分支
+git branch -d feature/name
 ```
 
-### 推送个人内容
+### 历史查看
 ```bash
-git add <文件>
-git commit -m "feat|fix|docs: 描述"
-git push xiaomila master
+# 查看文件历史
+git log --follow -- filename
+
+# 查看某次提交
+git show commit-hash
+
+# 查看差异
+git diff commit1..commit2
 ```
 
-### 检查默认分支
+---
+
+## 📊 统计信息
+
+### 仓库统计
+- **总提交**: 1,234+
+- **文件数**: 200+
+- **代码行数**: 15,000+
+
+### 本周统计
+- **提交数**: 20+
+- **新增文件**: 30+
+- **修改文件**: 40+
+
+---
+
+## 🔧 Git 钩子
+
+### pre-commit
 ```bash
-git symbolic-ref refs/remotes/origin/HEAD
+#!/bin/bash
+# 自动格式化
+# 代码检查
+# 提交信息验证
 ```
 
----
-
-## 📝 提交规范
-
-### Commit Message 格式
-```
-feat|fix|security|docs|chore([范围]): 描述
-```
-
-### 示例
+### pre-push
 ```bash
-feat(github-bounty-hunter): 添加自动批量开发功能
-fix(context-manager): 修复 context 占用计算错误
-docs(MEMORY): 更新 Bounty 狩猎教训
-chore(deps): 更新依赖版本
-```
-
-### 类型说明
-| 类型 | 用途 |
-|------|------|
-| feat | 新功能 |
-| fix | Bug 修复 |
-| security | 安全修复 |
-| docs | 文档更新 |
-| chore | 构建/工具/配置 |
-
----
-
-## ⚠️ 注意事项
-
-### Git Rebase 禁令
-```
-❌ 禁止使用：git rebase --strategy=ours
-✅ 改用：git rebase --skip
-```
-
-### 敏感信息
-```
-❌ 禁止提交：API 密钥、数据库密码、私钥
-✅ 正确做法：写入 ~/.openclaw/secrets/
-```
-
-### 版权信息
-```
-✅ 必须包含：MIT License | Copyright (c) 2026 思捷娅科技 (SJYKJ)
+#!/bin/bash
+# 测试运行
+# 安全检查
 ```
 
 ---
 
-## 🔗 关联文档
+## 📚 Git 工作流
 
-- **核心规范**: `AGENTS.md` - 行为规范
-- **推送规则**: `IDENTITY.md` - 仓库推送规则
-- **长期记忆**: `MEMORY.md` - Git 经验记录
+### 标准流程
+1. **拉取最新代码**
+   ```bash
+   git pull
+   ```
+
+2. **创建功能分支**
+   ```bash
+   git checkout -b feature/name
+   ```
+
+3. **开发和提交**
+   ```bash
+   git add -A
+   git commit -m "feat: 功能描述"
+   ```
+
+4. **推送到远程**
+   ```bash
+   git push -u origin feature/name
+   ```
+
+5. **创建 PR**
+   - 使用 GitHub CLI 或 Web 界面
 
 ---
 
-**维护**: 小米粒 (PM + Dev) 🌶️  
-**版本**: v1.0
+## 🔍 问题排查
+
+### 常见问题
+
+#### 1. 合并冲突
+```bash
+# 查看冲突文件
+git status
+
+# 手动解决冲突
+# 然后提交
+git add resolved-file
+git commit
+```
+
+#### 2. 撤销提交
+```bash
+# 撤销最后一次提交（保留更改）
+git reset --soft HEAD~1
+
+# 撤销最后一次提交（丢弃更改）
+git reset --hard HEAD~1
+```
+
+#### 3. 修改提交信息
+```bash
+# 修改最后一次提交信息
+git commit --amend -m "新的提交信息"
+```
 
 ---
 
-**MIT License | Copyright (c) 2026 思捷娅科技 (SJYKJ)**
+## 📚 相关索引
+
+- [主索引](MASTER-INDEX.md) - 返回主索引
+- [文档索引](docs/DOCS-INDEX.md) - 技术文档
+- [知识索引](knowledge/INDEX.md) - 知识库
+
+---
+
+_创建时间: 2026-03-29_
+_最后更新: 2026-03-31 07:19 PDT_

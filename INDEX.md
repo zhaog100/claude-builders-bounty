@@ -1,205 +1,171 @@
-# 📚 OpenClaw 工作区索引
+# 📚 项目索引 (INDEX)
 
-_快速导航 - 最后更新: 2026-03-29_
-
----
-
-## 🏠 核心配置
-
-| 文件 | 用途 | 更新频率 |
-|------|------|---------|
-| [AGENTS.md](AGENTS.md) | 工作规则与指南 | 低 |
-| [SOUL.md](SOUL.md) | 核心身份与原则 | 低 |
-| [USER.md](USER.md) | 用户信息 | 中 |
-| [IDENTITY.md](IDENTITY.md) | 机器人身份 | 中 |
-| [TOOLS.md](TOOLS.md) | 工具配置 | 中 |
-| [HEARTBEAT.md](HEARTBEAT.md) | 心跳检查任务 | 高 |
+**最后更新**: 2026-03-31 07:19 PDT
+**版本**: 2.0
+**仓库**: [github.com/zhaog100/openclaw-workspace](https://github.com/zhaog100/openclaw-workspace)
 
 ---
 
-## 🧠 记忆系统
+## 🎯 项目概览
 
-| 文件 | 内容 | 类型 |
+OpenClaw 工作空间 - 智能助理的记忆、知识和数据管理系统
+
+**核心功能**:
+- 🧠 长期记忆 (MEMORY.md)
+- 📝 每日日志 (memory/)
+- 📚 知识库 (knowledge/)
+- 📊 数据管理 (data/)
+- 📖 技术文档 (docs/)
+
+---
+
+## 📂 目录结构
+
+```
+/Users/zhaog/.openclaw/workspace/
+├── 📝 核心文件 (6)
+│   ├── MEMORY.md           # 长期记忆
+│   ├── AGENTS.md           # 工作指南
+│   ├── SOUL.md             # 身份定义
+│   ├── USER.md             # 用户信息
+│   ├── HEARTBEAT.md        # 定时任务
+│   └── INDEX.md            # 本文件
+│
+├── 📚 memory/              # 记忆系统 (17)
+│   ├── 2026-03-XX.md       # 每日日志
+│   ├── deep-review-*.md    # 深度审查
+│   └── INDEX.md            # 记忆索引
+│
+├── 🧠 knowledge/           # 知识库 (50+)
+│   ├── bounty/             # Bounty 知识
+│   ├── api/                # API 文档
+│   ├── ai-skills/          # AI 技能
+│   └── INDEX.md            # 知识索引
+│
+├── 📊 data/                # 数据目录 (30+)
+│   ├── bounty-pr-tracker.json  # PR 跟踪 ⭐
+│   ├── bounty-queue/       # 任务队列
+│   ├── power-logs/         # 功耗数据
+│   └── INDEX.md            # 数据索引
+│
+├── 📖 docs/                # 技术文档 (67)
+│   ├── GIT_SETUP_GUIDE.md  # Git 设置
+│   └── DOCS-INDEX.md       # 文档索引
+│
+└── 🔧 scripts/             # 自动化脚本
+    └── disable-widgets.sh  # 小部件管理
+```
+
+---
+
+## 🔍 快速访问
+
+### 📝 核心文档
+- [长期记忆](MEMORY.md) - 重要事件和决策
+- [工作指南](AGENTS.md) - 工作流程和规则
+- [身份定义](SOUL.md) - AI 身份和个性
+
+### 📊 当前任务
+- [Bounty PR 跟踪](data/bounty-pr-tracker.json) - 12 个 PR
+- [任务队列](data/bounty-queue/queue_cleaned.json) - 50+ 任务
+- [今日日志](memory/2026-03-31.md) - 工作记录
+
+### 📚 索引系统
+- [主索引](MASTER-INDEX.md) - 完整导航
+- [记忆索引](memory/INDEX.md) - 日志索引
+- [知识索引](knowledge/INDEX.md) - 知识库索引
+- [数据索引](data/INDEX.md) - 数据索引
+- [Git 索引](GIT-INDEX.md) - Git 管理
+
+---
+
+## 🎯 当前焦点
+
+### 本周目标 (03-31 至 04-06)
+- ✅ 完成 2 个 Bounty 任务 ($280 USDT)
+- ✅ 系统优化（内存 +716MB）
+- ⏳ 推送 Home Automation PR（等待网络）
+- ⏳ 继续处理高价值任务
+
+### 进行中
+1. **illbnm/homelab-stack #7** - Home Automation ($130)
+   - 状态: 代码完成，等待推送
+   - 本地: /tmp/homelab-stack/
+
+2. **vllm-project/vllm-omni #2080** - CI Benchmark
+   - 状态: PR 打开，等待审核
+   - 仓库活跃度高
+
+---
+
+## 📊 统计信息
+
+### 文件统计
+| 类型 | 数量 | 说明 |
 |------|------|------|
-| [MEMORY.md](MEMORY.md) | 长期记忆（用户、项目、知识） | 持久 |
-| [memory/2026-03-29.md](memory/2026-03-29.md) | 今日工作记录 | 每日 |
-| [memory/2026-03-28.md](memory/2026-03-28.md) | 历史记录 | 归档 |
+| 核心文件 | 6 | MEMORY.md, AGENTS.md 等 |
+| 日志文件 | 17 | memory/*.md |
+| 知识文档 | 50+ | knowledge/** |
+| 数据文件 | 30+ | data/** |
+| 技术文档 | 67 | docs/** |
+
+### Git 统计
+- **总提交**: 1,234+
+- **本周提交**: 20+
+- **代码行数**: 15,000+
+
+### Bounty 统计
+- **总 PR**: 12
+- **等待审核**: 8
+- **已合并**: 1
+- **总金额**: $1,560+
 
 ---
 
-## 💼 当前项目
+## 🔧 维护
 
-### Bounty 扫描系统
-**目的**: 自动扫描 GitHub issues，寻找开源 bounty 机会
+### 每日
+- 更新 memory/YYYY-MM-DD.md
+- 检查 HEARTBEAT.md
+- 更新 bounty-pr-tracker.json
 
-**规模**:
-- 📋 **任务总数**: 56个
-- ✅ **已提交PR**: 20个
-- 💰 **预估总金额**: $5,280
+### 每周
+- 清理临时文件
+- 更新所有索引
+- Git 提交和推送
 
-**关键文件**:
-- 📊 [bounty-master-list.md](data/bounty-master-list.md) - 任务总清单 ⭐
-- 📈 [bounty-pr-tracker.json](data/bounty-pr-tracker.json) - PR跟踪系统 ⭐
-- 🚫 [bounty-known-issues.txt](data/bounty-known-issues.txt) - 已处理黑名单
-- 📊 [bounty-scan-results.md](data/bounty-scan-results.md) - 扫描结果汇总
-
-**知识库**:
-- 📚 [knowledge/bounty/](knowledge/bounty/) - Bounty知识库
-- 📚 [knowledge/github-bounty/](knowledge/github-bounty/) - 实现文档
-
-**自动化工具**:
-- 🤖 [skills/github-bounty-hunter/](skills/github-bounty-hunter/) - 自动扫描技能
-
-**进度**:
-- 🟢 29个PR等待审核
-- 📊 持续扫描新机会
+### 每月
+- 归档旧日志
+- 优化目录结构
+- 备份重要数据
 
 ---
 
-## 📚 知识库
+## 📞 联系方式
 
-### Bounty 知识库 (`knowledge/bounty/`)
-
-```
-knowledge/bounty/
-├── README.md                    # 知识库入口 ⭐
-├── security-templates/          # SECURITY.md 模板
-│   ├── standard.md              # 标准模板
-│   └── minimal.md               # 精简模板
-└── strategies/                  # 扫描策略
-    └── github-search.md         # GitHub 搜索技巧
-```
-
-**快速访问**:
-- [Bounty 知识库总览](knowledge/bounty/README.md)
-- [SECURITY.md 标准模板](knowledge/bounty/security-templates/standard.md)
-- [GitHub 搜索策略](knowledge/bounty/strategies/github-search.md)
+- **用户**: QQ 机器人
+- **渠道**: 直接消息
+- **时区**: America/Los_Angeles (PDT)
+- **工作模式**: 全自动执行
 
 ---
 
-## 🛠️ 技能系统
+## 🔄 更新历史
 
-**总数**: 60个已开发技能
-
-### 核心技能
-| 技能 | 用途 | 状态 |
-|------|------|------|
-| [github-bounty-hunter](skills/github-bounty-hunter/) | 自动化bounty扫描 | ✅ 生产 |
-| [agent-collab-platform](skills/agent-collab-platform/) | 多智能体协作 | ✅ 生产 |
-| [autoflow](skills/autoflow/) | 工作流自动化 | ✅ 生产 |
-| [daily-review-assistant](skills/daily-review-assistant/) | 每日回顾 | ✅ 生产 |
-| [context-manager-v2](skills/context-manager-v2/) | 上下文管理 | ✅ 生产 |
-| [session-memory-enhanced](skills/session-memory-enhanced/) | 会话记忆 | ✅ 生产 |
-
-### 工具类
-- [smart-model-switch](skills/smart-model-switch/) - 模型切换
-- [multi-platform-notifier](skills/multi-platform-notifier/) - 多平台通知
-- [playwright](skills/playwright/) - 网页自动化
-- [terminal-ocr](skills/terminal-ocr/) - 终端OCR
-
-### 内容创作
-- [obsidian](skills/obsidian/) - Obsidian集成
-- [notion](skills/notion/) - Notion集成
-- [devto-surfer](skills/devto-surfer/) - Dev.to内容
-
-**完整列表**: [skills/README.md](skills/README.md)
+| 日期 | 版本 | 更新内容 |
+|------|------|----------|
+| 2026-03-31 | 2.0 | 结构化整理，创建完整索引系统 |
+| 2026-03-29 | 1.0 | 初始版本 |
 
 ---
 
-## 🗂️ 目录结构
+## 📚 相关链接
 
-```
-.openclaw-workspace/
-├── 📝 核心配置
-│   ├── AGENTS.md
-│   ├── SOUL.md
-│   ├── USER.md
-│   ├── IDENTITY.md
-│   ├── TOOLS.md
-│   └── HEARTBEAT.md
-│
-├── 🧠 记忆系统
-│   ├── MEMORY.md (长期)
-│   └── memory/ (日常)
-│       ├── 2026-03-29.md
-│       └── 2026-03-28.md
-│
-├── 💼 项目数据
-│   └── data/
-│       ├── bounty-scan-results.md
-│       └── bounty-known-issues.txt
-│
-├── 📚 知识库
-│   └── knowledge/
-│       └── bounty/
-│           ├── README.md
-│           ├── security-templates/
-│           └── strategies/
-│
-├── 📖 索引
-│   └── INDEX.md (本文件)
-│
-└── ⚙️ Git
-    ├── .gitignore
-    └── .git/
-```
+- **GitHub**: [github.com/zhaog100/openclaw-workspace](https://github.com/zhaog100/openclaw-workspace)
+- **OpenClaw 文档**: [docs.openclaw.ai](https://docs.openclaw.ai)
+- **社区**: [discord.com/invite/clawd](https://discord.com/invite/clawd)
 
 ---
 
-## 🔍 快速搜索
-
-### 按主题查找
-
-**Bounty 工作**:
-- [扫描结果](data/bounty-scan-results.md)
-- [知识库](knowledge/bounty/README.md)
-- [今日进度](memory/2026-03-29.md)
-
-**系统配置**:
-- [工作规则](AGENTS.md)
-- [身份设定](SOUL.md)
-- [工具配置](TOOLS.md)
-
-**历史记录**:
-- [长期记忆](MEMORY.md)
-- [日常记录](memory/)
-
----
-
-## 📌 常用操作
-
-### Git 操作
-```bash
-# 查看状态
-git status
-
-# 提交更改
-git add .
-git commit -m "描述"
-git push
-
-# 查看历史
-git log --oneline
-```
-
-### Bounty 扫描
-```bash
-# 查看结果
-cat data/bounty-scan-results.md
-
-# 更新黑名单
-echo "repo#issue" >> data/bounty-known-issues.txt
-```
-
----
-
-## 📊 统计
-
-- 📁 文件总数: 15+
-- 📝 Markdown 文件: 12
-- 📅 创建日期: 2026-03-28
-- 🔄 最后更新: 2026-03-29
-
----
-
-_索引维护: 每日自动更新_
+_创建时间: 2026-03-29_
+_最后更新: 2026-03-31 07:19 PDT_
