@@ -4,7 +4,8 @@
 *.key
 *.pem
 .env
-.env.*
+.env.local
+.env.*.local
 secrets/
 credentials/
 
