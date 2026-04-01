@@ -10,7 +10,7 @@
 
 ### 1️⃣ Gemini API Key
 
-**泄露的 Key**: `AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms`
+**泄露的 Key**: `AIzaSyCk...z6ms` (已脱敏)
 
 **泄露位置**:
 - `data/reports/sensitive-data-masking-implementation-2026-03-31.md` (已脱敏)
@@ -36,7 +36,7 @@
 
 ### 2️⃣ GitHub Personal Access Token
 
-**泄露的 Token**: `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`
+**泄露的 Token**: `ghp_ZqxUi...` (已脱敏)
 
 **泄露位置**:
 - `scripts/bounty_scan.sh` (已替换为环境变量)

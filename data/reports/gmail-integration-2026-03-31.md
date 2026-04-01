@@ -29,7 +29,7 @@ GEMINI_API_KEY=AIza...z6ms
 这个 Gemini API Key 在之前的安全扫描中已发现泄露：
 
 - **泄露位置**: 多个文档、脚本、Git 历史提交
-- **Key 值**: `AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms`
+- **Key 值**: `AIzaSyCk...z6ms`
 - **状态**: 🔴 **已公开，需要立即轮换**
 
 **建议操作**:

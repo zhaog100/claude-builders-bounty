@@ -21,14 +21,14 @@
 #### 泄露 1: Gemini API Key
 
 **文件**: `data/reports/security-audit-2026-03-31.md`  
-**内容**: `AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms`  
+**内容**: `AIzaSyCk...z6ms`  
 **行号**: 45  
 **修复**: 替换为假数据 `AIzaSyB1234567890abcdefghijklmnop`
 
 #### 泄露 2: GitHub Token
 
 **文件**: `scripts/bounty_scan.sh`  
-**内容**: `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`  
+**内容**: `ghp_ZqxUi...`  
 **行号**: 7  
 **修复**: 替换为环境变量 `${GITHUB_TOKEN}`
 
@@ -40,11 +40,11 @@
 
 ```bash
 # 修复 Gemini API Key
-sed -i 's/AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms/AIzaSyB1234567890abcdefghijklmnop/g' \
+sed -i 's/AIzaSyCk...z6ms/AIzaSyB1234567890abcdefghijklmnop/g' \
     data/reports/security-audit-2026-03-31.md
 
 # 修复 GitHub Token
-sed -i 's/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/\${GITHUB_TOKEN}/g' \
+sed -i 's/ghp_ZqxUi.../\${GITHUB_TOKEN}/g' \
     scripts/bounty_scan.sh
 ```
 
@@ -93,7 +93,7 @@ git commit -m "fix: 修复遗漏的敏感信息泄露"
 #### 2. 撤销 GitHub Token
 
 1. 访问 https://github.com/settings/tokens
-2. 找到 `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`
+2. 找到 `ghp_ZqxUi...`
 3. 点击 **Delete** 或 **Revoke**
 4. 生成新的 Token
 5. 更新 `.env` 文件

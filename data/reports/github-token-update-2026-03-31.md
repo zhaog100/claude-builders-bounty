@@ -45,13 +45,13 @@
 
 **1. 撤销泄露的 Gemini API Key**
 - 访问: https://makersuite.google.com/app/apikey
-- 删除旧 Key: `AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms`
+- 删除旧 Key: `AIzaSyCk...z6ms`
 - 生成新 Key
 - 更新 `.env` 文件
 
 **2. 撤销泄露的旧 GitHub Token**
 - 访问: https://github.com/settings/tokens
-- 删除旧 Token: `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`
+- 删除旧 Token: `ghp_ZqxUi...`
 - 确认新 Token 正常工作
 
 **3. 测试 Gmail 集成**

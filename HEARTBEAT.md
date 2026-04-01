@@ -10,13 +10,13 @@ _利用 OpenClaw 的 heartbeat 机制实现每日回顾_
 
 - [ ] **撤销 Gemini API Key**
   - 访问: https://makersuite.google.com/app/apikey
-  - 删除旧 Key: `AIzaSyCkYPw59BS4WQJjUe2jBUXwEKgCgu1z6ms`
+  - 删除旧 Key: `AIzaSyCk...z6ms`
   - 生成新 Key
   - 更新 `.env` 文件
 
 - [ ] **撤销 GitHub Token**
   - 访问: https://github.com/settings/tokens
-  - 删除旧 Token: `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`
+  - 删除旧 Token: `ghp_ZqxUi...`
   - 生成新 Token
   - 更新 `.env` 文件
 
@@ -102,12 +102,8 @@ _配置完成时间: 2026-03-29 09:05 PDT_
 
 ## 🔍 最近心跳状态
 
-- **最后检查**: 2026-03-31 16:40 PDT
-- **检查类型**: 常规检查（下午）
-- **系统状态**: ✅ 功耗监控正常运行（492个样本，最新：16:36）
-- **防睡眠**: ✅ caffeinate 正常运行
-- **功耗数据**: ✅ 正常采集
-- **内存**: 1.0 GB（刚优化）
-- **负载**: 1.07（正常）
-- **网络**: ❌ GitHub 不可达（持续）
+- **最后检查**: 2026-03-31 18:32 PDT
+- **检查类型**: 常规检查（傍晚）
+- **系统状态**: ⚠️ 功耗监控已停止（已知问题）
+- **防睡眠**: ✅ caffeinate 正常运行（2天10小时）
 - **待办**: 🚨 明日上午必须轮换 API Keys
