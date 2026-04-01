@@ -1,9 +1,8 @@
 #!/bin/bash
 # 每日维护脚本 - 凌晨2点执行
 # 创建时间: 2026-03-31 16:57 PDT
+# 更新时间: 2026-03-31 17:00 PDT
 # 功能: 结构化整理、回顾总结、更新仓库、重启 Gateway
-
-set -e
 
 # ==================== 配置 ====================
 WORKSPACE="/Users/zhaog/.openclaw/workspace"
@@ -46,6 +45,15 @@ log_error() {
     echo -e "${RED}[✗]${NC} $1" | tee -a "$LOG_FILE"
 }
 
+# 错误处理
+handle_error() {
+    log_error "错误发生在第 $1 行: $2"
+    # 继续执行，不退出
+}
+
+# 设置错误陷阱
+trap 'handle_error $LINENO "$BASH_COMMAND"' ERR
+
 # 初始化日志
 mkdir -p "$DATA_DIR"
 echo "" >> "$LOG_FILE"
@@ -56,7 +64,7 @@ log_section "1️⃣ 结构化整理"
 
 # 1.1 记忆整理
 log "整理记忆文件..."
-cd "$WORKSPACE"
+cd "$WORKSPACE" || { log_error "无法切换到工作目录"; }
 
 # 删除空文件和临时文件
 find "$MEMORY_DIR" -type f -name "*.tmp" -delete 2>/dev/null || true
@@ -158,18 +166,24 @@ fi
 
 # 2.2 提取关键知识点
 log "提取关键知识点..."
-KNOWLEDGE_LEARNED=$(grep -A 3 "学习要点\|💡\|经验" "$MEMORY_FILE" 2>/dev/null | head -20)
-if [ -n "$KNOWLEDGE_LEARNED" ]; then
-    log "发现学习要点:"
-    echo "$KNOWLEDGE_LEARNED" | head -10
+if [ -f "$MEMORY_FILE" ]; then
+    KNOWLEDGE_LEARNED=$(grep -A 3 "学习要点\|💡\|经验" "$MEMORY_FILE" 2>/dev/null | head -20)
+    if [ -n "$KNOWLEDGE_LEARNED" ]; then
+        log "发现学习要点:"
+        echo "$KNOWLEDGE_LEARNED" | head -10 | tee -a "$LOG_FILE"
+    fi
 fi
 
 # 2.3 检查遗漏任务
 log "检查遗漏任务..."
-MISSED_TASKS=$(grep -E "\[ \]|待办|TODO|pending" "$MEMORY_FILE" 2>/dev/null)
-if [ -n "$MISSED_TASKS" ]; then
-    log_warning "发现未完成任务:"
-    echo "$MISSED_TASKS" | head -5
+if [ -f "$MEMORY_FILE" ]; then
+    MISSED_TASKS=$(grep -E "\[ \]|待办|TODO|pending" "$MEMORY_FILE" 2>/dev/null || true)
+    if [ -n "$MISSED_TASKS" ]; then
+        log_warning "发现未完成任务:"
+        echo "$MISSED_TASKS" | head -5 | tee -a "$LOG_FILE"
+    else
+        log_success "所有任务已完成"
+    fi
 fi
 
 # ==================== 3. 更新仓库 ====================
@@ -179,7 +193,7 @@ log_section "3️⃣ 更新仓库"
 log "更新长期记忆（MEMORY.md）..."
 if [ -f "$WORKSPACE/MEMORY.md" ] && [ -f "$MEMORY_FILE" ]; then
     # 提取今日重要内容并添加到 MEMORY.md
-    TODAY_SUMMARY=$(grep -A 5 "## 📚 今日学习" "$MEMORY_FILE" 2>/dev/null | head -20)
+    TODAY_SUMMARY=$(grep -A 5 "## 📚 今日学习" "$MEMORY_FILE" 2>/dev/null | head -20 || true)
     if [ -n "$TODAY_SUMMARY" ]; then
         # 在 MEMORY.md 中添加今日总结（如果不存在）
         if ! grep -q "## 📅 $TODAY" "$WORKSPACE/MEMORY.md" 2>/dev/null; then
@@ -188,6 +202,8 @@ if [ -f "$WORKSPACE/MEMORY.md" ] && [ -f "$MEMORY_FILE" ]; then
             echo "" >> "$WORKSPACE/MEMORY.md"
             echo "$TODAY_SUMMARY" >> "$WORKSPACE/MEMORY.md"
             log_success "已添加今日总结到 MEMORY.md"
+        else
+            log_warning "今日总结已存在"
         fi
     fi
 fi
@@ -204,11 +220,6 @@ $(date '+%Y-%m-%d %H:%M:%S')
 - 结构化整理（记忆、知识库、索引）
 - 回顾总结（查漏补缺）
 - 更新长期记忆
-
-系统状态：
-- 内存: $(vm_stat | perl -ne '/Pages free:\s+(\d+)/ and printf "%.1f GB", $1*4096/1073741824')
-- 负载: $(uptime | awk -F'load averages:' '{print $2}')
-- Gateway: 运行中
 " 2>/dev/null || true
     log_success "Git 已提交"
 else
@@ -220,14 +231,12 @@ log "推送到 GitHub..."
 if git push 2>/dev/null; then
     log_success "已推送到 GitHub"
 else
-    log_warning "推送失败（可能网络问题）"
+    log_warning "推送失败（可能网络问题，稍后重试）"
 fi
 
 # ==================== 4. 更新 QMD 向量 ====================
 log_section "4️⃣ 更新 QMD 向量"
 
-# 这里可以添加向量更新逻辑
-# 如果 OpenClaw 有相关的向量更新命令
 log "向量更新功能待实现（OpenClaw 可能自动管理）"
 log_success "跳过（OpenClaw 自动管理向量）"
 
@@ -235,12 +244,12 @@ log_success "跳过（OpenClaw 自动管理向量）"
 log_section "5️⃣ 重启 Gateway"
 
 log "重启 OpenClaw Gateway..."
-BEFORE_MEM=$(ps aux | grep openclaw-gateway | grep -v grep | awk '{print $6/1024 " MB"}')
+BEFORE_MEM=$(ps aux | grep openclaw-gateway | grep -v grep | awk '{printf "%.0f MB", $6/1024}')
 log "重启前内存: $BEFORE_MEM"
 
-if openclaw gateway restart 2>/dev/null; then
+if openclaw gateway restart 2>&1 | tee -a "$LOG_FILE"; then
     sleep 5
-    AFTER_MEM=$(ps aux | grep openclaw-gateway | grep -v grep | awk '{print $6/1024 " MB"}')
+    AFTER_MEM=$(ps aux | grep openclaw-gateway | grep -v grep | awk '{printf "%.0f MB", $6/1024}')
     log_success "Gateway 已重启"
     log "重启后内存: $AFTER_MEM"
 
@@ -248,7 +257,7 @@ if openclaw gateway restart 2>/dev/null; then
     if openclaw gateway status 2>/dev/null | grep -q "running"; then
         log_success "Gateway 状态正常"
     else
-        log_error "Gateway 启动失败"
+        log_warning "Gateway 状态检查失败"
     fi
 else
     log_error "Gateway 重启失败"
@@ -263,38 +272,29 @@ vm_stat | perl -ne '
 /Pages free:\s+(\d+)/ and printf "  可用: %.2f GB\n", $1*$ps/1073741824;
 /Pages active:\s+(\d+)/ and printf "  活跃: %.2f GB\n", $1*$ps/1073741824;
 /Pages inactive:\s+(\d+)/ and printf "  非活跃: %.2f GB\n", $1*$ps/1073741824;
-'
+' | tee -a "$LOG_FILE"
 
 log ""
 log "系统负载:"
-uptime | awk -F'load averages:' '{print "  " $2}'
+uptime | awk -F'load averages:' '{print "  " $2}' | tee -a "$LOG_FILE"
 
 log ""
 log "磁盘空间:"
-df -h / | tail -1 | awk '{print "  根分区: "$3" 已用 / "$2" 总量 ("$5" 使用率)"}'
+df -h / | tail -1 | awk '{print "  根分区: "$3" 已用 / "$2" 总量 ("$5" 使用率)"}' | tee -a "$LOG_FILE"
 
 log ""
 log "Gateway 进程:"
-ps aux | grep openclaw-gateway | grep -v grep | awk '{printf "  PID: %s, CPU: %s%%, MEM: %s%% (%.0f MB)\n", $2, $3, $4, $6/1024}'
+ps aux | grep openclaw-gateway | grep -v grep | awk '{printf "  PID: %s, CPU: %s%%, MEM: %s%% (%.0f MB)\n", $2, $3, $4, $6/1024}' | tee -a "$LOG_FILE"
 
 # ==================== 完成 ====================
 log_section "✅ 每日维护完成"
 
 END_TIME=$(date '+%Y-%m-%d %H:%M:%S')
 log "完成时间: $END_TIME"
-
-# 计算耗时
-START_SEC=$(date -j -f "%Y-%m-%d %H:%M:%S" "$(head -5 "$LOG_FILE" | grep "每日维护开始" | sed 's/.*\([0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\} [0-9]\{2\}:[0-9]\{2\}:[0-9]\{2\}\).*/\1/')" +%s 2>/dev/null || echo "0")
-END_SEC=$(date +%s)
-if [ "$START_SEC" != "0" ]; then
-    DURATION=$((END_SEC - START_SEC))
-    log "总耗时: ${DURATION} 秒"
-fi
-
 log ""
 log "下次执行时间: 明日凌晨 2:00"
 
-# 发送通知（可选）
-# osascript -e 'display notification "每日维护已完成" with title "OpenClaw"' 2>/dev/null || true
+# 移除错误陷阱
+trap - ERR
 
 exit 0
