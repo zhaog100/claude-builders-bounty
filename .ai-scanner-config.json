@@ -1,0 +1,11 @@
+{
+  "api_provider": "openrouter",
+  "model": "qwen/qwen3.6-plus-preview:free",
+  "max_tokens": 4000,
+  "temperature": 0.7,
+  "enable_code_review": true,
+  "enable_security_analysis": true,
+  "enable_value_assessment": true,
+  "cache_ai_responses": true,
+  "cache_ttl_hours": 24
+}
