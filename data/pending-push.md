@@ -5,43 +5,50 @@
 
 ---
 
-## 📦 待推送仓库
-
-### 1️⃣ zhaog100/xiaomili-skills（主仓库）
-
-**待推送提交**（2 个）:
-- `265d635d` - 📚 QMD 索引更新：添加今日新文件
-- `3c3bf048` - 📝 HEARTBEAT 更新：密钥轮换 + master 分支删除完成
-
-**推送命令**:
-```bash
-cd /Users/zhaog/.openclaw/workspace
-git push origin main
-```
-
----
-
 ### 2️⃣ zhaog100/homelab-stack（Home Automation PR）
 
-**待推送内容**:
-- **本地提交**: `275e175` - feat: 实现完整的智能家居自动化栈
-- **Issue**: illbnm/homelab-stack #7
+**状态**: ✅ 代码已推送到 fork，⏳ PR 待创建
+
+**已完成**:
+- ✅ **本地提交**: `275e175` - feat: 实现完整的智能家居自动化栈
+- ✅ **推送到 fork**: zhaog100/homelab-stack（已同步）
+
+**待完成**:
+- ⏳ **创建 PR** 到上游仓库 illbnm/homelab-stack #7
 - **金额**: $130 USDT
 - **文件数**: 12 个
 - **代码行数**: +2,800 行
 
-**推送步骤**:
+**创建 PR 步骤**:
 ```bash
-cd /tmp/homelab-stack
-git push origin main
+# 代码已推送到 zhaog100/homelab-stack
+# 现在需要创建 PR 到上游仓库
+
 gh pr create --repo illbnm/homelab-stack \
+  --head zhaog100:main \
   --title "feat(home-automation): 实现完整的智能家居自动化栈" \
-  --body "详见 PR 描述"
+  --body "## 实现内容
+
+- ✅ 完整的智能家居自动化栈（Home Assistant + Node-RED + Mosquitto + Zigbee2MQTT + ESPHome）
+- ✅ Docker Compose 配置
+- ✅ Home Assistant 使用 host 网络模式（支持 mDNS/UPnP）
+- ✅ Mosquitto 安全配置（禁用匿名访问）
+- ✅ 完整的 README 和快速入门指南
+- ✅ 自动化设置脚本 (setup.sh)
+- ✅ Makefile 简化常用操作
+
+## 测试
+
+- ✅ Docker Compose 配置已验证
+- ✅ 网络模式已优化（host 模式支持设备发现）
+- ✅ 安全配置已完成
+
+Closes #7"
 ```
 
 ---
 
-## 🔧 解决方案
+## 📦 待推送仓库
 
 ### 方案 1: 等待网络恢复
 - 等待 10-30 分钟
