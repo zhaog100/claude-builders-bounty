@@ -1,11 +1,20 @@
 # QMD 向量化索引
 
-**更新时间**: 2026-03-31 21:57:45
+**更新时间**: 2026-03-31 23:30:45
 **模式**: CPU
+**新增文件**: 今日工作日志 + 经验总结
 
 ---
 
 ## 📚 知识库文件
+
+### 📅 今日新增（2026-03-31）
+- [今日工作日志 - S 级任务完成](memory/2026-03-31.md)
+- [质量评估标准 v2.0](knowledge/bounty/standards/quality-assessment-v2.md)
+- [智能扫描策略](knowledge/bounty/strategies/scoring.md)
+- [自动工作流](knowledge/bounty/strategies/auto-workflow.md)
+
+### 📚 常用文件
 
 - [📚 知识库索引](knowledge/KNOWLEDGE-INDEX.md)
 - [内容策略指南](knowledge/content-creation/content-strategy/内容策略指南.md)
