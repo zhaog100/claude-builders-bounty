@@ -16,11 +16,39 @@ _利用 OpenClaw 的 heartbeat 机制实现每日回顾_
 
 ---
 
+## ⏳ 待办任务（自动重试）
+
+### 删除 xiaomili-skills 远程 master 分支
+**状态**: ⏳ 等待网络恢复
+**重试次数**: 0
+**命令**: `git push origin --delete master`
+**工作目录**: `~/.openclaw/workspace`
+**创建时间**: 2026-03-31 19:40 PDT
+
+**重试逻辑**:
+```bash
+# 每次心跳自动执行
+cd ~/.openclaw/workspace
+if git push origin --delete master 2>&1 | grep -q "remote ref does not exist"; then
+    echo "✅ master 分支已不存在（可能已手动删除）"
+    # 从 HEARTBEAT.md 移除此任务
+elif git push origin --delete master; then
+    echo "✅ master 分支删除成功"
+    # 从 HEARTBEAT.md 移除此任务
+else
+    echo "⚠️ 网络仍不稳定，下次心跳继续重试"
+    # 保留任务，等待下次心跳
+fi
+```
+
+---
+
 ## 📋 检查任务
 
 ### 每次心跳执行
 - [ ] 检查是否到了回顾时间
 - [ ] 检查系统运行状态
+- [ ] **执行待办任务（自动重试网络操作）**
 
 ### 午间回顾 (12:00-13:00)
 如果当前时间在 12:00-13:00 之间：
