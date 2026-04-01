@@ -16,31 +16,28 @@ _利用 OpenClaw 的 heartbeat 机制实现每日回顾_
 
 ---
 
-## ⏳ 待办任务（自动重试）
+## ✅ 已完成任务
 
 ### 删除 xiaomili-skills 远程 master 分支
-**状态**: ⚠️ 需要手动操作
-**原因**: master 是 GitHub 默认分支，无法直接删除
-**创建时间**: 2026-03-31 19:40 PDT
-**更新时间**: 2026-03-31 20:50 PDT
+**状态**: ✅ **已完成**（2026-03-31 23:11 PDT）
+**完成方式**:
+1. ✅ 使用 GitHub API 修改默认分支为 `main`
+2. ✅ 使用 GitHub API 删除远程 `master` 分支
+3. ✅ 删除本地 `master` 分支
 
-**解决方案**:
-1. **方法 1**: 通过 GitHub 网页操作（推荐）
-   - 访问: https://github.com/zhaog100/xiaomili-skills/settings
-   - 找到 "Default branch" 设置
-   - 将默认分支改为 `main`
-   - 然后删除 `master` 分支
+**执行命令**:
+```bash
+# 1. 修改默认分支
+gh api repos/zhaog100/xiaomili-skills -X PATCH -f default_branch=main
 
-2. **方法 2**: 通过 GitHub API
-   ```bash
-   # 1. 将默认分支改为 main
-   gh api repos/zhaog100/xiaomili-skills -X PATCH -f default_branch=main
-   
-   # 2. 删除 master 分支
-   git push origin --delete master
-   ```
+# 2. 删除远程 master 分支
+gh api repos/zhaog100/xiaomili-skills/git/refs/heads/master -X DELETE
 
-**网络状态**: ✅ 已恢复
+# 3. 删除本地 master 分支
+git branch -D master
+```
+
+**结论**: main 分支已完全超越 master，无需合并，直接保留 main 即可
 
 ---
 
