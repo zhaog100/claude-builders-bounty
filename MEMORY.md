@@ -331,9 +331,35 @@ _每次工作后更新_
 - **频率**: 每周一次
 - **价值**: 提升查找效率约 30%
 
+#### S 级任务处理策略（2026-03-31）
+- **三阶段修复**: 默认启用认证 → 清理 PII 标签 → 添加启动警告
+- **深度防御**: 不只修复一个问题，而是建立多层防御
+- **案例**: litellm #24530（CVSS 7.5 安全漏洞）
+  - Phase 1: `require_auth_for_metrics_endpoint: False → True`
+  - Phase 2: 移除 `team_alias`, `user_email`, `client_ip`, `user_agent` 标签
+  - Phase 3: 添加启动警告提示安全风险
+- **PR**: https://github.com/BerriAI/litellm/pull/24895
+- **教训**: 安全修复应该遵循"secure by default"原则
+
+#### master vs main 分支冲突处理（2026-03-31）
+- **问题**: 两个分支无共同祖先，合并产生 53 个冲突
+- **分析**: main 分支已完全超越 master（+146 新文件，-44 旧文件）
+- **解决**: 直接保留 main，删除 master
+- **教训**: 当新分支已包含所有价值时，强制合并只会引入混乱
+- **待办**: ⚠️ 需要在 GitHub 网页上修改默认分支后再删除 master
+
+#### macOS 系统优化自动化（2026-03-31）
+- **mediaanalysisd**: 照片/视频分析服务（高 CPU 占用）
+  - 临时停止: `sudo launchctl bootout system/com.apple.mediaanalysisd`
+  - 自动重启: macOS 会自动重启
+- **小部件**: macOS 会持续自动重启小部件
+  - 方案 1: LaunchAgent 定时关闭（每 5 分钟）
+  - 方案 2: 系统偏好设置永久移除（推荐）
+- **优化效果**: 内存 +802MB，负载 -54%
+
 ---
 
-_最后更新: 2026-03-31 07:27 PDT_
+_最后更新: 2026-03-31 23:04 PDT_
 
 ---
 
