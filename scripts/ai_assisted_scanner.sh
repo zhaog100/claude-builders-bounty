@@ -53,12 +53,12 @@ init_config() {
         echo "$DEFAULT_CONFIG" > "$CONFIG_FILE"
     fi
 
-    # 读取配置
-    ENABLE_CODE_REVIEW=$(jq -r '.enable_code_review' "$CONFIG_FILE")
-    ENABLE_SECURITY=$(jq -r '.enable_security_analysis' "$CONFIG_FILE")
-    ENABLE_VALUE=$(jq -r '.enable_value_assessment' "$CONFIG_FILE")
-    MAX_TOKENS=$(jq -r '.max_tokens' "$CONFIG_FILE")
-    TEMPERATURE=$(jq -r '.temperature' "$CONFIG_FILE")
+    # 读取配置 (使用 Python 替代 jq)
+    ENABLE_CODE_REVIEW=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE'))['enable_code_review'])" 2>/dev/null || echo "true")
+    ENABLE_SECURITY=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE'))['enable_security_analysis'])" 2>/dev/null || echo "true")
+    ENABLE_VALUE=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE'))['enable_value_assessment'])" 2>/dev/null || echo "true")
+    MAX_TOKENS=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE'))['max_tokens'])" 2>/dev/null || echo "4000")
+    TEMPERATURE=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE'))['temperature'])" 2>/dev/null || echo "0.7")
 }
 
 # 检查 API Key
@@ -100,14 +100,16 @@ call_ai() {
             \"temperature\": $TEMPERATURE
         }" 2>&1)
 
-    # 检查错误
-    if echo "$response" | jq -e '.error' > /dev/null 2>&1; then
-        log "${RED}API 调用失败: $(echo "$response" | jq -r '.error.message')${NC}"
+    # 检查错误 (使用 Python 替代 jq)
+    if ! echo "$response" | python3 -c "import sys, json; d=json.load(sys.stdin); exit(0 if 'error' not in d else 1)" 2>/dev/null; then
+        :  # 没有错误
+    else
+        log "${RED}API 调用失败${NC}"
         return 1
     fi
 
-    # 提取响应
-    local content=$(echo "$response" | jq -r '.choices[0].message.content')
+    # 提取响应 (使用 Python 替代 jq)
+    local content=$(echo "$response" | python3 -c "import sys, json; print(json.load(sys.stdin)['choices'][0]['message']['content'])" 2>/dev/null)
 
     # 保存缓存
     mkdir -p "$CACHE_DIR"
