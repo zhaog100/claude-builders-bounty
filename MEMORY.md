@@ -290,6 +290,25 @@ _每次工作后更新_
 - **Git 提交**: 13 次 | **代码**: +1,700 -500 行
 - **工作时长**: 17.5 小时（02:00 - 20:20）
 
+**2026-04-01**（完整统计）:
+- **S级任务**: litellm 安全漏洞修复（CVSS 7.5）✅ 所有测试通过
+  - PR #24895: 三阶段深度防御（认证+PII清理+警告）
+  - 等待维护者审核
+- **Bounty 任务**: 2 个开放（$280 USDT）
+  - #12: Backup & DR ($150) - PR #398 开放中
+  - #7: Home Automation ($130) - PR #401 开放中
+- **AI集成**: Qwen3.6 Plus 免费API集成完成
+  - 100万上下文窗口
+  - 代码质量评估、安全分析、自动化工作流
+- **时区调整**: PDT → CST（Asia/Shanghai）
+- **安全加固**: OpenClaw Gateway安全配置完成
+  - bind: loopback（仅本地）
+  - 插件白名单
+  - 自动内存清理（LaunchAgent）
+- **知识产出**: 3 个文档（Qwen集成、安全加固、自动清理）
+- **Git 提交**: 19 次 | **代码**: +5,200 行
+- **工作时长**: 12 小时（15:00 - 23:19）
+
 ---
 
 ## 🛠️ 技能系统
@@ -357,6 +376,47 @@ _每次工作后更新_
   ```
 - **教训**: 当新分支已包含所有价值时，强制合并只会引入混乱
 - **状态**: ✅ 已完成（2026-03-31 23:11 PDT）
+
+### 2026-04-01 学习要点
+
+#### Qwen3.6 Plus 免费API集成
+- **关键特性**: 100万上下文窗口，完全免费（预览期）
+- **四种使用方式**: OpenCode, OpenRouter, CodingPlan Test, JCode
+- **集成方法**: OpenRouter API（`https://openrouter.ai/api/v1`）
+- **应用场景**:
+  - Bounty扫描：代码质量评估、安全分析、项目分析
+  - 开发工作：代码审查、编程助手、自动化测试
+- **配置文件**: `~/.openclaw/workspace/.env`（OPENROUTER_API_KEY）
+- **脚本**: `scripts/ai_assisted_scanner_v2.sh`
+- **指南**: `knowledge/ai-integration/AI-SCANNER-GUIDE.md`
+- **优势**: 大上下文、高质量、零成本、自动化
+
+#### OpenClaw安全加固
+- **Gateway配置**: `bind: loopback`（仅本地访问）
+- **反向代理信任**: `trustedProxies: ["127.0.0.1"]`
+- **插件白名单**: `plugins.allow: ["openclaw-qqbot"]`
+- **安全审计**: 标准审计 + 深度审计（插件审查）
+- **文件权限**: 自动修复（600 for .env）
+- **效果**: 严重问题 2→0，警告 6→2，评分提升
+
+#### macOS自动内存清理
+- **LaunchAgent**: `com.openclaw.auto-memory-clean`
+- **频率**: 每小时检查一次
+- **触发条件**: 可用内存 < 500 MB
+- **清理内容**: 用户缓存、npm缓存、临时文件
+- **日志**: `~/.openclaw/workspace/data/auto-memory-clean.log`
+- **限制**: 无法自动清理文件缓存（需手动 `sudo purge`）
+- **建议**: 每周手动执行一次 `sudo purge`
+
+#### 时区调整最佳实践
+- **场景**: 用户跨时区工作
+- **配置文件**:
+  - MEMORY.md（时区字段）
+  - USER.md（时区字段）
+  - HEARTBEAT.md（回顾时间段）
+  - 环境变量（`TZ='Asia/Shanghai'`）
+- **时间差**: PDT (UTC-7) → CST (UTC+8) = +15 小时
+- **回顾时间调整**: 午间 12:00→20:00 CST，晚间 23:00→23:00 CST
 
 #### macOS 系统优化自动化（2026-03-31）
 - **mediaanalysisd**: 照片/视频分析服务（高 CPU 占用）
