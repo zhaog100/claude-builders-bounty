@@ -19,27 +19,28 @@ _利用 OpenClaw 的 heartbeat 机制实现每日回顾_
 ## ⏳ 待办任务（自动重试）
 
 ### 删除 xiaomili-skills 远程 master 分支
-**状态**: ⏳ 等待网络恢复
-**重试次数**: 0
-**命令**: `git push origin --delete master`
-**工作目录**: `~/.openclaw/workspace`
+**状态**: ⚠️ 需要手动操作
+**原因**: master 是 GitHub 默认分支，无法直接删除
 **创建时间**: 2026-03-31 19:40 PDT
+**更新时间**: 2026-03-31 20:50 PDT
 
-**重试逻辑**:
-```bash
-# 每次心跳自动执行
-cd ~/.openclaw/workspace
-if git push origin --delete master 2>&1 | grep -q "remote ref does not exist"; then
-    echo "✅ master 分支已不存在（可能已手动删除）"
-    # 从 HEARTBEAT.md 移除此任务
-elif git push origin --delete master; then
-    echo "✅ master 分支删除成功"
-    # 从 HEARTBEAT.md 移除此任务
-else
-    echo "⚠️ 网络仍不稳定，下次心跳继续重试"
-    # 保留任务，等待下次心跳
-fi
-```
+**解决方案**:
+1. **方法 1**: 通过 GitHub 网页操作（推荐）
+   - 访问: https://github.com/zhaog100/xiaomili-skills/settings
+   - 找到 "Default branch" 设置
+   - 将默认分支改为 `main`
+   - 然后删除 `master` 分支
+
+2. **方法 2**: 通过 GitHub API
+   ```bash
+   # 1. 将默认分支改为 main
+   gh api repos/zhaog100/xiaomili-skills -X PATCH -f default_branch=main
+   
+   # 2. 删除 master 分支
+   git push origin --delete master
+   ```
+
+**网络状态**: ✅ 已恢复
 
 ---
 
@@ -122,11 +123,12 @@ _配置完成时间: 2026-03-29 09:05 PDT_
 
 ## 🔍 最近心跳状态
 
-- **最后检查**: 2026-03-31 19:43 PDT
+- **最后检查**: 2026-03-31 20:50 PDT
 - **检查类型**: 常规检查（晚间）
 - **系统状态**: ⚠️ 功耗监控已停止（已知问题）
-- **防睡眠**: ✅ caffeinate 正常运行（2天10小时）
-- **网络状态**: ❌ 网络不可用
+- **防睡眠**: ✅ caffeinate 正常运行（2天11小时）
+- **网络状态**: ✅ 已恢复
 - **待办任务**: 
-  - ⏳ 删除远程 master 分支（等待网络恢复）
+  - ⚠️ 删除远程 master 分支（需要手动操作，master 是默认分支）
   - ✅ API Keys 已全部轮换完成
+  - ✅ S 级任务已锁定（BerriAI/litellm #24530）
