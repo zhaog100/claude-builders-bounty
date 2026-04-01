@@ -4,21 +4,13 @@ _利用 OpenClaw 的 heartbeat 机制实现每日回顾_
 
 ---
 
-## 🚨 紧急提醒（2026-04-01）
+## ✅ 密钥轮换已完成（2026-03-31 19:29 PDT）
 
-**必须在明日上午执行**：
-
-- [ ] **撤销 Gemini API Key**
-  - 访问: https://makersuite.google.com/app/apikey
-  - 删除旧 Key: `AIzaSyCk...z6ms`
-  - 生成新 Key
-  - 更新 `.env` 文件
-
-- [ ] **撤销 GitHub Token**
-  - 访问: https://github.com/settings/tokens
-  - 删除旧 Token: `ghp_ZqxUi...`
-  - 生成新 Token
-  - 更新 `.env` 文件
+**所有泄露密钥已处理**：
+- ✅ **Gemini API Key** - 旧密钥已删除，新密钥已配置
+- ✅ **GitHub Token** - 旧密钥已删除，新密钥已配置
+- ✅ **Gmail 密码** - 新配置，未泄露
+- ✅ **QQBot Token** - 已更新
 
 **详见**: `data/reports/api-keys-to-rotate.md`
 
