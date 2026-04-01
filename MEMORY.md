@@ -317,3 +317,18 @@ _最后更新: 2026-03-31 07:27 PDT_
 
 #### 📚 知识库
 - `knowledge/` - Bounty 知识库
+
+## 📅 2026-03-31
+
+## 📚 今日学习
+
+### 1️⃣ Home Assistant 网络模式
+
+**必须使用 `network_mode: host`**，原因：
+
+--
+## 📚 今日学习
+
+### 1️⃣ Home Assistant 网络模式
+
+**必须使用 `network_mode: host`**，原因：
