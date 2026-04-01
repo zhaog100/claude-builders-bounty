@@ -1,6 +1,6 @@
 # 📚 主索引 (MASTER-INDEX)
 
-**最后更新**: 2026-03-31 07:19 PDT
+**最后更新**: 2026-03-31 19:50 PDT
 **版本**: 2.0
 
 ---
@@ -91,7 +91,11 @@
 
 **当前任务**:
 - [illbnm/homelab-stack #12](data/bounty-pr-tracker.json#L4) - Backup & DR ($150) ✅ PR #398
-- [illbnm/homelab-stack #7](data/bounty-pr-tracker.json#L18) - Home Automation ($130) ⏳ 待推送
+- [illbnm/homelab-stack #7](data/bounty-pr-tracker.json#L18) - Home Automation ($130) ✅ PR #401
+
+**安全事件** (2026-03-31):
+- 🔴 API Key 泄露 → ✅ 已修复并轮换所有密钥
+- 📄 报告: `data/reports/security-scan-deep-2026-03-31.md`
 
 **历史任务**:
 - [RustChain #1589](data/bounty-pr-tracker.json#L32) - 已合并，等待付款
@@ -132,7 +136,8 @@ make update-index
 
 ### Git 统计
 
-- **总提交**: 1,234+
+- **总提交**: 1,250+
+- **今日提交**: 12
 - **未提交**: 0
 - **分支**: main
 
