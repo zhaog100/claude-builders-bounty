@@ -344,9 +344,19 @@ _每次工作后更新_
 #### master vs main 分支冲突处理（2026-03-31）
 - **问题**: 两个分支无共同祖先，合并产生 53 个冲突
 - **分析**: main 分支已完全超越 master（+146 新文件，-44 旧文件）
-- **解决**: 直接保留 main，删除 master
+- **解决**: ✅ 直接保留 main，删除 master
+- **执行步骤**:
+  1. 使用 GitHub API 修改默认分支为 `main`
+  2. 使用 GitHub API 删除远程 `master` 分支
+  3. 删除本地 `master` 分支
+- **命令**:
+  ```bash
+  gh api repos/zhaog100/xiaomili-skills -X PATCH -f default_branch=main
+  gh api repos/zhaog100/xiaomili-skills/git/refs/heads/master -X DELETE
+  git branch -D master
+  ```
 - **教训**: 当新分支已包含所有价值时，强制合并只会引入混乱
-- **待办**: ⚠️ 需要在 GitHub 网页上修改默认分支后再删除 master
+- **状态**: ✅ 已完成（2026-03-31 23:11 PDT）
 
 #### macOS 系统优化自动化（2026-03-31）
 - **mediaanalysisd**: 照片/视频分析服务（高 CPU 占用）
