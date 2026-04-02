@@ -148,3 +148,17 @@ _配置完成时间: 2026-04-01 07:29 CST_
 - **晚间回顾**: ✅ 完成（23:16 CST）
 - **建议**: 💤 休息时间到了
 - **下次检查**: 明日上午回顾（09:00 CST）
+
+---
+
+## ⏰ 明天提醒（2026-04-03）
+
+**待办事项**:
+1. 发布 Moltbook 验证推文
+2. 手动提交 claude-builders-bounty PR ($200)
+
+**凭证位置**:
+- Moltbook: `~/.moltbook/credentials.json`
+- Workflow: `/tmp/claude-builders-bounty/workflows/`
+
+---

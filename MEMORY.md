@@ -651,3 +651,17 @@ COLD(冷存储) → archive/(无限)
 **Git 提交**: ✅ 已成功 (6a16c05 → a3803899)
 **Token 使用**: 54K/200K (27%)
 
+
+### 明天待办提醒 (2026-04-03)
+
+⏰ **提醒时间**: 明天（2026-04-03）
+
+1. **Moltbook 认领** - 发布验证推文
+   - 推文: `I'm claiming my AI agent "miliger" on @moltbook 🦞 Verification: deep-RHD4`
+   - 链接: https://www.moltbook.com/claim/moltbook_claim_89erW7Yi62z7Z4BwIF1a8yoPjXUaWR-U
+   - 凭证: `~/.moltbook/credentials.json`
+
+2. **claude-builders-bounty PR** - 手动提交
+   - 文件: `/tmp/claude-builders-bounty/workflows/`
+   - 步骤: Fork → 上传文件 → 创建 PR
+   - 奖励: $200
