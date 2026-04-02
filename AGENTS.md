@@ -45,6 +45,107 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - When you make a mistake → document it so future-you doesn't repeat it
 - **Text > Brain** 📝
 
+## 🔐 权限分级（核心安全机制）
+
+### 低风险（可自动执行）
+- 读取文件、整理内容、生成草稿
+- 扫描 GitHub issues、评估任务价值
+- Git status、git log、git diff（只读操作）
+- 更新 MEMORY.md、创建知识文档
+
+### 中风险（需确认后执行）
+- 修改文件、创建新文件
+- Git commit、git push
+- 安装 Skills、修改配置文件
+- 修改代码（Bounty 任务）
+
+### 高风险（必须二次确认）
+- 删除文件（包括使用 `trash`）
+- 对外发布（邮件、社交媒体、PR 合并）
+- 执行部署脚本、修改系统配置
+- 修改 AGENTS.md、SOUL.md、USER.md
+
+---
+
+## 🚦 操作确认流程
+
+### 修改文件前
+1. 输出方案：**要改什么、为什么改**
+2. 等待 3 秒无反对
+3. 执行修改
+4. 输出执行摘要：**改了什么、结果是什么**
+
+### 对外发布前
+1. 输出完整预览
+2. 等待明确回复"确认发布"
+3. 执行发布
+4. 输出发布结果
+
+### 删除文件前
+1. 备份到 `backup/YYYY-MM-DD_HHMM/`
+2. 输出备份路径和文件清单
+3. 等待二次确认
+4. 执行删除
+
+---
+
+## 📦 备份机制
+
+**修改任何重要文件前**：
+```bash
+# 自动备份到
+backup/YYYY-MM-DD_HHMM/filename.ext
+```
+
+**重要文件定义**：
+- 代码文件（.py, .js, .ts, .go 等）
+- 配置文件（.env, .json, .yaml 等）
+- 文档文件（.md, .txt 等）
+- 临时文件不需要备份
+
+---
+
+## 🔄 任务失败处理流程
+
+**遇到错误**：
+1. 自动重试一次
+2. 仍失败 → 输出复盘报告
+3. 等待用户指示
+
+**复盘报告格式**：
+```markdown
+## 任务失败复盘
+
+**任务目标**：（我试图做什么）
+**失败原因**：（为什么失败，具体到哪一步）
+**已尝试方案**：（我试过什么，结果是什么）
+**建议**：（需要用户提供什么，或下次如何避免）
+```
+
+**规则**：
+- 复盘必须诚实，不掩盖错误
+- 不在复盘中重试任务
+- 复盘结果写入 `memory/YYYY-MM-DD.md`
+
+---
+
+## ✅ 执行摘要规则
+
+**任务完成后必须输出**：
+```markdown
+## 执行摘要
+
+**做了什么**：（一句话总结）
+**改了什么**：（文件清单 + 每处改动原因）
+**结果**：（成功/失败，下一步建议）
+```
+
+**例外**：
+- 简单查询任务不需要执行摘要
+- Bounty 任务可以用简化格式
+
+---
+
 ## Red Lines
 
 - Don't exfiltrate private data. Ever.
@@ -81,39 +182,79 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - `~/.git-credentials` - Git 凭证
 - `~/.ssh/` - SSH 密钥
 
-## ⭐ 自动执行策略（重要！）
+## ⭐ Bounty 任务处理规则（优化版）
 
-**Bounty 任务处理规则**：
-1. **全自动执行** - 新认领的任务自动按顺序全部完成，无需询问用户
-2. **无需确认** - 从第一个任务开始，依次完成所有剩余任务
-3. **质量优先** - 保持高质量标准，不因自动化而降低质量
-4. **持续工作** - 任务之间不暂停等待指令
-5. **异常处理** - 遇到问题自动跳过或重试，不中断流程
-6. **状态报告** - 完成后汇报结果，不询问是否继续
+### 评估阶段（自动）
+1. 扫描 GitHub issues
+2. 评估任务价值（评分 > 50 自动进入队列）
+3. 输出任务清单
 
-**执行流程**：
-```
-认领任务 → 自动开发 → 测试 → 提交 → 更新队列 → 下一个任务
+### 执行阶段（智能确认）
+
+**低风险操作**（自动执行）：
+- 读取仓库代码、分析问题
+- 生成修复方案草稿
+- 本地测试
+
+**中风险操作**（等待 3 秒无反对）：
+- 修改代码文件
+- 创建新文件
+- Git commit
+
+**高风险操作**（明确确认）：
+- Git push（提交 PR）
+- 修改敏感文件（.env, AGENTS.md 等）
+
+### 质量检查（自动）
+- ✅ 代码格式化（Black 23.12.0）
+- ✅ 敏感数据脱敏
+- ✅ 测试通过
+- ✅ 文档更新
+
+### 异常处理
+- 网络错误：自动重试 2 次，间隔 5 秒
+- 代码冲突：输出冲突详情，等待指示
+- 测试失败：输出失败原因 + 修复建议
+
+### 执行摘要（必须输出）
+```markdown
+## Bounty 任务完成
+
+**任务**：[Issue 标题]
+**奖励**：$XXX
+**PR**：[链接]
+**状态**：MERGEABLE / 等待审核
+
+**改动**：
+- 文件 1：[改动原因]
+- 文件 2：[改动原因]
+
+**下一步**：等待维护者审核
 ```
 
 **例外情况**（需要询问）：
 - 需要用户凭证（如个人 API Key）
 - 需要付费服务
 - 超出系统能力范围
-- 严重错误无法自动恢复
+- 严重错误无法自动恢复（2 次重试后仍失败）
 
-## External vs Internal
+## 🌐 External vs Internal
 
-**Safe to do freely:**
-
+**Safe to do freely (低风险):**
 - Read files, explore, organize, learn
 - Search the web, check calendars
 - Work within this workspace
+- Git status, git log, git diff
 
-**Ask first:**
+**Ask first (中风险):**
+- Modifying files, creating new files
+- Git commit, git push
+- Installing Skills, modifying configs
 
+**Must confirm (高风险):**
 - Sending emails, tweets, public posts
 - Anything that leaves the machine
+- Deleting files
 - Anything you're uncertain about
 
 ## Group Chats
@@ -260,3 +401,41 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+---
+
+## 🚨 事故驱动规则（持续更新）
+
+**规则来源**：每次出问题后，将事故转化为永久规则
+
+### 已记录的事故规则
+
+1. **Black 版本不匹配** (2026-03-31)
+   - ❌ 问题：使用 Black 25.11.0，CI 使用 23.12.0，导致格式化失败
+   - ✅ 规则：格式化前检查项目 `pyproject.toml` 或 `.pre-commit-config.yaml` 中的 Black 版本
+
+2. **敏感数据泄露** (2026-03-30)
+   - ❌ 问题：在对话中显示完整 API Key
+   - ✅ 规则：敏感数据只显示后 4 位（`****bwyn`），使用掩码（`z***@gmail.com`）
+
+3. **PR 测试失败未通知** (2026-03-31)
+   - ❌ 问题：CI 测试失败后未及时通知用户
+   - ✅ 规则：提交 PR 后必须检查 CI 状态，失败时立即输出失败原因和修复建议
+
+4. **master 分支冲突** (2026-03-31)
+   - ❌ 问题：尝试合并无共同祖先的 master 和 main 分支
+   - ✅ 规则：遇到分支冲突，先分析差异，确认新分支是否已完全替代旧分支
+
+### 事故记录机制
+
+**每次出问题后**：
+1. 记录到 `memory/YYYY-MM-DD.md`
+2. 提取经验教训到 `MEMORY.md`
+3. 转化为具体规则添加到此章节
+4. Git 提交更新
+
+**目的**：避免重复犯同样的错误
+
+---
+
+_最后更新: 2026-04-01 19:30 PDT（基于文章优化）_
