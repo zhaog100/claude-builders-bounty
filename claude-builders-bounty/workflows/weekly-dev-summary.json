@@ -1,0 +1,139 @@
+{
+  "name": "Weekly Dev Summary - Claude Code",
+  "nodes": [
+    {
+      "parameters": [
+        {
+          "name": "schedule",
+          "value": "0 9 * * 1"
+        }
+      ],
+      "id": "1",
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [470, 380]
+    },
+    {
+      "parameters": [
+        {
+          "name": "url",
+          "value": "https://api.github.com/repos/{{$credentials.githubRepo}}/commits"
+        },
+        {
+          "name": "authentication",
+          "value": "headerAuth",
+          "type": "options"
+        },
+        {
+          "name": "headerAuth",
+          "value": "Bearer {{$credentials.githubToken}}"
+        }
+      ],
+      "id": "2",
+      "name": "Get Commits",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": [
+        {
+          "name": "jsCode",
+          "value": "const commits = items;\nconst weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);\nconst recent = commits.filter(c => new Date(c.commit.committer.date) > weekAgo);\nconst grouped = {};\nfor (const commit of recent) {\n  const repo = commit.repository?.name || 'unknown';\n  if (!grouped[repo]) grouped[repo] = [];\n  grouped[repo].push({\n    message: commit.commit?.message || commit.message,\n    author: commit.commit?.committer?.name || commit.committer?.name || 'unknown',\n    date: commit.commit?.committer?.date || commit.committer?.date\n  });\n}\nreturn [{ json: { repositories: grouped, total: recent.length } }];"
+        }
+      ],
+      "id": "3",
+      "name": "Filter Commits",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [890, 300]
+    },
+    {
+      "parameters": [
+        {
+          "name": "model",
+          "value": "claude-3-5-sonnet-20241022"
+        },
+        {
+          "name": "prompt",
+          "value": "Generate a weekly development summary from these commits:\n\n{{$json.repositories}}"
+        },
+        {
+          "name": "apiKey",
+          "value": "{{$credentials.claudeApiKey}}"
+        }
+      ],
+      "id": "4",
+      "name": "Claude Analysis",
+      "type": "@anthropic/claude",
+      "typeVersion": 1,
+      "position": [1100, 300]
+    },
+    {
+      "parameters": [
+        {
+          "name": "values",
+          "value": "={{\"summary\": $json}}"
+        }
+      ],
+      "id": "5",
+      "name": "Format Output",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1310, 300]
+    }
+  ],
+  "connections": {
+    "Cron": {
+      "main": [
+        [
+          {
+            "node": "Get Commits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Commits": {
+      "main": [
+        [
+          {
+            "node": "Filter Commits",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Commits": {
+      "main": [
+        [
+          {
+            "node": "Claude Analysis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude Analysis": {
+      "main": [
+        [
+          {
+            "node": "Format Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0
+}
