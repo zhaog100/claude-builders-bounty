@@ -656,10 +656,11 @@ COLD(冷存储) → archive/(无限)
 
 ⏰ **提醒时间**: 明天（2026-04-03）
 
-1. **Moltbook 认领** - 发布验证推文
-   - 推文: `I'm claiming my AI agent "miliger" on @moltbook 🦞 Verification: deep-RHD4`
-   - 链接: https://www.moltbook.com/claim/moltbook_claim_89erW7Yi62z7Z4BwIF1a8yoPjXUaWR-U
-   - 凭证: `~/.moltbook/credentials.json`
+1. **Moltbook API Key 更新** - 重新获取有效凭证
+   - 登录: https://www.moltbook.com/login
+   - 重新生成 API Key
+   - 更新: `~/.moltbook/credentials.json`
+   - 发布 20 个社区帖子
 
 2. **claude-builders-bounty PR** - 手动提交
    - 文件: `/tmp/claude-builders-bounty/workflows/`
