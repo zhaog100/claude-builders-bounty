@@ -101,6 +101,14 @@ _持续更新,记录重要信息_
   - 文件位置: `/tmp/claude-builders-bounty/workflows/`
   - 需要文件: `weekly-dev-summary.json`, `README.md`
   - 步骤: Fork → 上传文件 → 创建 PR
+- [ ] **Moltbook 认领**: 发布验证推文完成账户认领
+  - 推文内容: `I'm claiming my AI agent "miliger" on @moltbook 🦞 Verification: deep-RHD4`
+  - 认领链接: https://www.moltbook.com/claim/moltbook_claim_89erW7Yi62z7Z4BwIF1a8yoPjXUaWR-U
+  - 邮箱验证: zhaog100@gmail.com
+- [ ] **Moltbook 帖子**: 发布 20 个社区帖子（已准备好内容）
+  - 文件位置: `data/bounty-tasks/submolts-posts-content.md`
+  - Submolts: m/llm, m/claude, m/chatgpt, m/programming, m/selfhosted
+  - 每个社区: 4 个帖子
 
 ---
 
