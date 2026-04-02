@@ -98,6 +98,68 @@ _持续更新,记录重要信息_
 ### 新增待办(2026-04-02)
 
 - [ ] **手动提交 PR**: claude-builders-bounty #5 (n8n Workflow $200) - 明天处理
+- [ ] **跟进付款**: RustChain #2205 (2 RTC) - 已回复冒领,等待维护者处理
+
+---
+
+## 🔍 经验教训
+
+_每次工作后更新_
+
+### 2026-04-02 学习要点
+
+#### 高强度工作节奏管理
+- **工作时长**: ~23 小时（00:20-23:16 CST）
+- **任务完成**: 7 个 Bounty 任务（$1,200 USDT + 2 RTC + S级）
+- **策略**:
+  - 优先级排序: S级 > A级 > B级
+  - 自动化优先: 使用脚本提升效率
+  - 网络问题处理: 本地优先,网络恢复后统一推送
+- **效果**: 高产出,但需要平衡休息
+
+#### Git 分支冲突处理进阶
+- **问题**: Fork 仓库与主仓库无共同提交历史
+- **案例**: claude-builders-bounty #5
+- **解决**:
+  1. 本地完成所有开发工作
+  2. 记录到待办事项
+  3. 设置提醒（明天手动处理）
+- **教训**: 无法创建 PR 时,不要阻塞,记录待办后继续下一个任务
+
+#### 赏金冒领处理流程
+- **问题**: 有人冒领已合并的 PR
+- **案例**: RustChain #2205
+- **处理步骤**:
+  1. 检查 PR 合并时间和作者
+  2. 在 Issue 中回复冒领警告
+  3. 提供正确的钱包地址
+  4. 等待维护者最终裁决
+- **效果**: 已回复冒领警告,等待处理
+
+#### 多仓库并行工作
+- **策略**: 同时处理多个 Bounty 任务
+- **案例**: homelab-stack (5个任务)
+  - #83 Observability ($280)
+  - #398 Backup & DR ($150)
+  - #401 Home Automation ($130)
+  - #409 SSO ($300)
+  - #410 Testing ($200)
+  - #80 AI Stack ($220)
+- **优势**: 效率提升,减少上下文切换成本
+- **风险**: 需要管理好分支和提交
+
+#### 自动化测试系统建立
+- **框架**: 纯 Bash 测试框架
+  - tests/lib/assert.sh (30+ 断言函数)
+  - tests/lib/docker.sh (Docker 工具)
+  - tests/lib/report.sh (报告生成)
+- **测试套件**:
+  - tests/stacks/base.test.sh
+  - tests/stacks/monitoring.test.sh
+  - tests/stacks/sso.test.sh
+  - tests/stacks/ai.test.sh
+- **CI 集成**: .github/workflows/test.yml
+- **效果**: 提升代码质量,自动化验收
   - 文件位置: `/tmp/claude-builders-bounty/workflows/`
   - 需要文件: `weekly-dev-summary.json`, `README.md`
   - 步骤: Fork → 上传文件 → 创建 PR
