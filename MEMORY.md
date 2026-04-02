@@ -490,13 +490,43 @@ _最后更新: 2026-03-31 23:30 PDT_
 
 ## 📚 今日学习
 
-### 1️⃣ Home Assistant 网络模式
+### 2026-04-01: 自我进化系统建立
 
-**必须使用 `network_mode: host`**，原因：
+#### 核心技能安装
+1. **self-improving-agent** - 自我改进技能（20.2K 安装量）
+   - 多层记忆架构（语义+情景+工作记忆）
+   - 自动从技能使用中学习
+   - 错误自纠正机制
+   - 模式提取和抽象
 
---
-## 📚 今日学习
+2. **find-skills** - 自动发现新技能（已安装）
+3. **agent-collab-platform** - 多智能体协作（已安装）
 
-### 1️⃣ Home Assistant 网络模式
+#### 记忆系统优化
+- ✅ 创建 `memory/semantic-patterns.json`（语义记忆）
+- ✅ 创建 `memory/episodic/`（情景记忆）
+- ✅ 创建 `memory/working/`（工作记忆）
+- ✅ 创建 `scripts/daily-learn.sh`（每日学习脚本）
+
+#### 三层记忆架构
+```
+HOT（热存储）  → MEMORY.md（≤100 行）
+WARM（温存储） → knowledge/（≤200 行/文件）
+COLD（冷存储） → archive/（无限）
+```
+
+#### 自动升级/降级规则
+- 同样错误犯 3 次 → 升级为"必须记住"规则
+- 规则 30 天没用 → 降级到温存储
+- 规则 90 天没用 → 归档到冷存储
+
+#### 学习来源
+- 文章：《你的OpenClaw日常健忘？试试这套龙虾自主进化指南》
+- 核心理念：让 AI 自己发现问题、寻找工具、组建团队、记住教训
+- 实施方案：`knowledge/self-improvement-plan.md`
+
+---
+
+### 2026-03-31: Home Assistant 网络模式
 
 **必须使用 `network_mode: host`**，原因：

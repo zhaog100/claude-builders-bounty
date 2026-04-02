@@ -1,26 +1,5 @@
 {
   "lastChecks": {
-    "system": "2026-04-02T03:23:00+08:00",
-    "bounty_tasks": "2026-04-02T03:23:00+08:00",
-    "git_status": "2026-04-02T03:23:00+08:00"
-  },
-  "todayStats": {
-    "bounty_completed": 7,
-    "git_commits": 21,
-    "code_lines": 5200,
-    "high_value_remaining": 44,
-    "work_hours": 0
-  },
-  "systemHealth": {
-    "load": 1.11,
-    "memory": "low",
-    "free_gb": 0.25,
-    "status": "normal"
-  },
-  "prStatus": {
-    "litellm_24895": "review_required",
-    "homelab_398": "open",
-    "homelab_401": "open",
-    "rustchain_2205": "merged_waiting_payment"
+    "email": 1743275200
   }
 }
