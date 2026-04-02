@@ -95,6 +95,13 @@ _持续更新,记录重要信息_
 - [ ] **持续记录事故**:每次出问题后添加到 AGENTS.md "事故驱动规则"章节
 - [ ] **定期回顾**:每周检查 AGENTS.md 是否需要优化(周日晚间)
 
+### 新增待办(2026-04-02)
+
+- [ ] **手动提交 PR**: claude-builders-bounty #5 (n8n Workflow $200) - 明天处理
+  - 文件位置: `/tmp/claude-builders-bounty/workflows/`
+  - 需要文件: `weekly-dev-summary.json`, `README.md`
+  - 步骤: Fork → 上传文件 → 创建 PR
+
 ---
 
 ## 🔍 经验教训
