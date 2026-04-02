@@ -60,10 +60,17 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - 修改代码（Bounty 任务）
 
 ### 高风险（必须二次确认）
+- **执行 Shell 命令**（exec_shell 工具）⚠️
 - 删除文件（包括使用 `trash`）
 - 对外发布（邮件、社交媒体、PR 合并）
 - 执行部署脚本、修改系统配置
 - 修改 AGENTS.md、SOUL.md、USER.md
+
+**Shell 命令执行规则**：
+- 所有 `exec_shell` 操作必须先输出命令内容
+- 等待用户明确回复"确认"、"执行"或"同意"
+- 未经确认不得执行任何 Shell 命令
+- 例外：只读命令（`ls`, `cat`, `grep` 等）可自动执行
 
 ---
 
