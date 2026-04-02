@@ -5,7 +5,8 @@ _Learn about the person you're helping. Update this as you go._
 - **Name:**
 - **What to call them:**
 - **Pronouns:** _(optional)_
-- **Timezone:** Asia/Shanghai (CST)
+- **Timezone:** Asia/Shanghai (CST, UTC+8)
+- **偏好**: 使用中国时区（CST）显示时间
 - **Notes:**
 
 ## Context
