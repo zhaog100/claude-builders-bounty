@@ -1,7 +1,34 @@
 {
   "lastChecks": {
-    "security_fix": 1703277358,
-    "last_security_fix_check": 1703276800,
-    "testing": 1743540489
-  }
+    "system": "2026-04-02T16:50:00+08:00",
+    "git_status": "2026-04-02T16:50:00+08:00",
+    "git_push": "2026-04-02T16:50:00+08:00"
+  },
+  "systemHealth": {
+    "load": 1.06,
+    "memory": "critical",
+    "free_gb": 0.02,
+    "uptime_hours": 20.16,
+    "status": "warning"
+  },
+  "gitStatus": {
+    "pushed": true,
+    "last_commit": "a5d90a0f",
+    "pending": 0
+  },
+  "services": {
+    "auto_memory_clean": "configured",
+    "prevent_sleep": "running",
+    "widget_killer": "configured",
+    "daily_maintenance": "configured",
+    "system_monitor": "configured",
+    "gateway": "running"
+  },
+  "alerts": [
+    {
+      "level": "critical",
+      "message": "内存极低（0.02 GB），建议手动执行 sudo purge",
+      "timestamp": "2026-04-02T16:50:00+08:00"
+    }
+  ]
 }
