@@ -1,0 +1,42 @@
+主题: Follow-up on RustChain Payment (Issue #2755)
+
+收件人: Scottcjn (维护者)
+
+发件人: zhaog100@gmail.com
+
+日期: 2026-04-02
+
+---
+
+Dear Maintainer,
+
+Thank you for merging PR #2205! 
+
+I noticed this PR was merged 9 days ago on 2026-03-17, According to the bounty guidelines, the payment of 15 RTC should due within 3-5 business days.
+
+However, I haven't received any payment confirmation yet.
+
+Could you please update me on this status?
+
+**Payment Details:**
+- Wallet: RTCb72a1accd46b9ba9f22dbd4b5c6aad5a5831572b
+- Platform: RustChain
+- Expected Payment: 15 RTC
+- Reference: PR #2205 - https://github.com/Scottcjn/rustchain-bounties/pull/2205
+- Claim Issue: #2755 - https://github.com/Scottcjn/rustchain-bounties/issues/2755
+- Merged Date: 2026-03-17
+- Days Overdue: 9 days
+
+**Alternative Contact:**
+- GitHub: @zhaog100
+- Email: zhaog100@gmail.com
+
+Thank you!
+
+Best regards,
+Xiaomili 🌾
+Bounty Hunter & Developer
+
+---
+📧 邮件草稿
+请复制此内容并发送到维护者邮箱或 在 GitHub Issue #2755 中添加此评论
