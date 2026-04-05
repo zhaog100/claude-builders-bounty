@@ -1,0 +1,9 @@
+paypal,payment,bounty, invoice, transfer_keywords
+transfer
+ODdtity_keywords
+ wire, bank transfer, paypal
+paypal_keywords = ['paypal', 'payment', 'bounty', 'invoice']
+rustchain_keywords = ['rustchain', 'payment sent', 'payment approved', 'payment confirmed']
+ crypto_keywords = ['usdt', 'crypto',transfer_keywords = ['transfer', 'wire transfer', 'ach transfer']
+ oddity_keywords = ['wire', 'bank transfer', 'ach transfer']
+swift, swift, ach, swift, swift']
