@@ -131,8 +131,8 @@ print(response.json()['choices'][0]['message']['content'])
    - ❌ 不要使用 `dashscope.aliyuncs.com/compatible-mode/v1`
 
 2. **模型名称**:
-   - ✅ 使用 `qwen3.5-plus`
-   - ❌ 不要使用 `qwen-plus` 或其他变体
+   - ✅ 使用正确模型名：`qwen3.5-plus`, `qwen3-max-2026-01-23`, `qwen3-coder-next` 等
+   - ❌ 不要使用旧名称：`qwen-plus`, `qwen-turbo`, `qwen-max`（已废弃）
 
 3. **配额管理**:
    - 监控每月使用量

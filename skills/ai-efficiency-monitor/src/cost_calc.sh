@@ -22,9 +22,10 @@ declare -gA MODEL_PRICES=(
   ["claude-3-opus"]="0.105:0.525"
   ["claude-3-sonnet"]="0.021:0.105"
   ["claude-3-haiku"]="0.00015:0.00075"
-  ["qwen-turbo"]="0.002:0.006"
-  ["qwen-plus"]="0.004:0.012"
-  ["qwen-max"]="0.02:0.06"
+  ["qwen3.5-plus"]="0.004:0.012"
+  ["qwen3-max-2026-01-23"]="0.02:0.06"
+  ["qwen3-coder-next"]="0.002:0.006"
+  ["qwen3-coder-plus"]="0.003:0.009"
 )
 
 # 模型上下文窗口大小 (tokens)
@@ -42,9 +43,10 @@ declare -gA MODEL_CONTEXT=(
   ["claude-3-opus"]=200000
   ["claude-3-sonnet"]=200000
   ["claude-3-haiku"]=200000
-  ["qwen-turbo"]=131072
-  ["qwen-plus"]=131072
-  ["qwen-max"]=32768
+  ["qwen3.5-plus"]=1000000
+  ["qwen3-max-2026-01-23"]=1000000
+  ["qwen3-coder-next"]=131072
+  ["qwen3-coder-plus"]=131072
 )
 
 aiemon_cost() {
@@ -64,7 +66,7 @@ aiemon_cost() {
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     printf "%-20s %10s %10s\n" "模型" "输入" "输出"
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-    for m in glm-5-turbo glm-5 glm-4-plus glm-4-flash deepseek-chat deepseek-reasoner gpt-4o gpt-4o-mini gpt-3.5-turbo claude-3-opus claude-3-sonnet claude-3-haiku qwen-turbo qwen-plus qwen-max; do
+    for m in glm-5-turbo glm-5 glm-4-plus glm-4-flash deepseek-chat deepseek-reasoner gpt-4o gpt-4o-mini gpt-3.5-turbo claude-3-opus claude-3-sonnet claude-3-haiku qwen3.5-plus qwen3-max-2026-01-23 qwen3-coder-next qwen3-coder-plus; do
       local prices="${MODEL_PRICES[$m]}"
       local inp out
       inp="${prices%%:*}"
