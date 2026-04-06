@@ -70,13 +70,13 @@ _持续更新,记录重要信息_
 - **安全存储** - `~/.openclaw/workspace/.env`(已在 .gitignore)
 
 ### API 配置
-- **阿里云百炼**
-  - OpenAI 兼容: `https://coding.dashscope.aliyuncs.com/v1`
-  - Anthropic 兼容: `https://coding.dashscope.aliyuncs.com/apps/anthropic`
-  - 状态: ⚠️ **配额已用完**(HTTP 429)
-  - 错误: "month allocated quota exceeded"
-  - 解决: 充值或等待配额重置
+- **阿里云百炼** ✅ **已恢复可用** (2026-04-06)
+  - OpenAI 兼容端点: `https://coding.dashscope.aliyuncs.com/v1`
+  - Anthropic 兼容端点: `https://coding.dashscope.aliyuncs.com/apps/anthropic`
+  - **推荐模型**: `qwen3.5-plus` (100万上下文窗口)
+  - 状态: ✅ **可用** (已测试通过)
   - 配置文件: `~/.openclaw/workspace/.env`
+  - 测试时间: 2026-04-06 20:15 PDT
 
 ---
 
