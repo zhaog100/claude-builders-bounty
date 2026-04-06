@@ -73,7 +73,10 @@ _持续更新,记录重要信息_
 - **阿里云百炼** ✅ **已恢复可用** (2026-04-06)
   - OpenAI 兼容端点: `https://coding.dashscope.aliyuncs.com/v1`
   - Anthropic 兼容端点: `https://coding.dashscope.aliyuncs.com/apps/anthropic`
-  - **推荐模型**: `qwen3.5-plus` (100万上下文窗口)
+  - **可用模型列表**:
+    - 🔥 **千问系列**: qwen3.5-plus (推荐), qwen3-max-2026-01-23, qwen3-coder-next, qwen3-coder-plus
+    - 🤖 **智谱系列**: glm-5 (系统默认), glm-4.7
+    - 🌟 **第三方**: kimi-k2.5, MiniMax-M2.5
   - 状态: ✅ **可用** (已测试通过)
   - 配置文件: `~/.openclaw/workspace/.env`
   - 测试时间: 2026-04-06 20:15 PDT
